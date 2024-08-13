@@ -47,4 +47,7 @@ public class ProductDetailEntity {
     @OneToMany(mappedBy = "productDetail")
     private Set<OrderDetailEntity> orderDetails;
 
+    @OneToMany(mappedBy = "productDetail")
+    private Set<CartEntity> carts;
+
 }

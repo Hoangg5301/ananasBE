@@ -53,4 +53,7 @@ public class ProductEntity {
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<ProductDetailEntity> productDetails;
+
+    @ManyToMany(mappedBy = "products")
+    private Set<AccountEntity> accounts;
 }

@@ -46,8 +46,14 @@ public class AccountEntity {
     @JoinColumn(name = "roleId")
     private RoleEntity role;
 
+    //join cart
+    @OneToMany(mappedBy = "account")
+    private Set<CartEntity> carts;
+
     // Join create React
     @ManyToMany
-    @Table(name = "React", @JoinColumn(name = "accountId"), @JoinColumn(name = "productId"))
-    private
+    @JoinTable(name = "React",
+            joinColumns = @JoinColumn(name = "accountId"),
+            inverseJoinColumns = @JoinColumn(name = "productId"))
+    private Set<ProductEntity> products;
 }
