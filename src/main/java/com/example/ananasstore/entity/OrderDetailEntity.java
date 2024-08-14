@@ -21,7 +21,7 @@ public class OrderDetailEntity {
     @ManyToOne
     @MapsId("productDetailId")
     @JoinColumn(name = "productDetailId")
-    private ProductEntity productDetail;
+    private ProductDetailEntity productDetail;
 
     @Column(name = "quantity")
     private int quantity;

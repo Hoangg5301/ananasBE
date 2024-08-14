@@ -11,7 +11,7 @@ import lombok.Setter;
 public class OrderDetailKey {
 
     @Column(name = "orderId")
-    private int oderId;
+    private int orderId;
 
     @Column(name = "productDetailId")
     private int productDetailId;

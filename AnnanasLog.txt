@@ -1,36 +1,36 @@
-2024-08-13T23:56:37.133+07:00  INFO 11056 --- [AnanasStore] [main] c.e.ananasstore.AnanasStoreApplication   : Starting AnanasStoreApplication using Java 21.0.1 with PID 11056 (F:\Project2024\AnanasStore\target\classes started by LaptopCuaH in F:\Project2024\AnanasStore)
-2024-08-13T23:56:37.137+07:00  INFO 11056 --- [AnanasStore] [main] c.e.ananasstore.AnanasStoreApplication   : No active profile set, falling back to 1 default profile: "default"
-2024-08-13T23:56:37.949+07:00  INFO 11056 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-08-13T23:56:37.950+07:00  INFO 11056 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2024-08-13T23:56:37.977+07:00  INFO 11056 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 0 JDBC repository interfaces.
-2024-08-13T23:56:37.998+07:00  INFO 11056 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-08-13T23:56:37.999+07:00  INFO 11056 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-08-13T23:56:38.006+07:00  INFO 11056 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
-2024-08-13T23:56:38.397+07:00  WARN 11056 --- [AnanasStore] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
-2024-08-13T23:56:38.460+07:00  INFO 11056 --- [AnanasStore] [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
-2024-08-13T23:56:38.898+07:00  INFO 11056 --- [AnanasStore] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-08-13T23:56:38.914+07:00  INFO 11056 --- [AnanasStore] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-08-13T23:56:38.915+07:00  INFO 11056 --- [AnanasStore] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
-2024-08-13T23:56:38.989+07:00  INFO 11056 --- [AnanasStore] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-08-13T23:56:38.989+07:00  INFO 11056 --- [AnanasStore] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1790 ms
-2024-08-13T23:56:39.211+07:00  INFO 11056 --- [AnanasStore] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-08-13T23:56:39.275+07:00  INFO 11056 --- [AnanasStore] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
-2024-08-13T23:56:39.313+07:00  INFO 11056 --- [AnanasStore] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-08-13T23:56:39.687+07:00  INFO 11056 --- [AnanasStore] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-08-13T23:56:39.719+07:00  INFO 11056 --- [AnanasStore] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-08-13T23:56:39.925+07:00  INFO 11056 --- [AnanasStore] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2b9b17ce
-2024-08-13T23:56:39.927+07:00  INFO 11056 --- [AnanasStore] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-08-13T23:56:40.324+07:00 ERROR 11056 --- [AnanasStore] [main] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Identifier field 'prodcutDetailId' named in '@MapsId' does not exist in entity 'com.example.ananasstore.entity.CartEntity'
-2024-08-13T23:56:40.325+07:00  WARN 11056 --- [AnanasStore] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Identifier field 'prodcutDetailId' named in '@MapsId' does not exist in entity 'com.example.ananasstore.entity.CartEntity'
-2024-08-13T23:56:40.325+07:00  INFO 11056 --- [AnanasStore] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-08-13T23:56:40.367+07:00  INFO 11056 --- [AnanasStore] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-08-13T23:56:40.371+07:00  INFO 11056 --- [AnanasStore] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2024-08-13T23:56:40.383+07:00  INFO 11056 --- [AnanasStore] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+2024-08-14T00:08:06.373+07:00  INFO 1072 --- [AnanasStore] [main] c.e.ananasstore.AnanasStoreApplication   : Starting AnanasStoreApplication using Java 21.0.1 with PID 1072 (F:\Project2024\AnanasStore\target\classes started by LaptopCuaH in F:\Project2024\AnanasStore)
+2024-08-14T00:08:06.376+07:00  INFO 1072 --- [AnanasStore] [main] c.e.ananasstore.AnanasStoreApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-08-14T00:08:07.087+07:00  INFO 1072 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-14T00:08:07.088+07:00  INFO 1072 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-08-14T00:08:07.109+07:00  INFO 1072 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 JDBC repository interfaces.
+2024-08-14T00:08:07.124+07:00  INFO 1072 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-14T00:08:07.125+07:00  INFO 1072 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-14T00:08:07.131+07:00  INFO 1072 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2024-08-14T00:08:07.420+07:00  WARN 1072 --- [AnanasStore] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-08-14T00:08:07.459+07:00  INFO 1072 --- [AnanasStore] [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-08-14T00:08:07.819+07:00  INFO 1072 --- [AnanasStore] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-14T00:08:07.831+07:00  INFO 1072 --- [AnanasStore] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-14T00:08:07.832+07:00  INFO 1072 --- [AnanasStore] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-14T00:08:07.889+07:00  INFO 1072 --- [AnanasStore] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-14T00:08:07.889+07:00  INFO 1072 --- [AnanasStore] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1459 ms
+2024-08-14T00:08:08.057+07:00  INFO 1072 --- [AnanasStore] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-14T00:08:08.114+07:00  INFO 1072 --- [AnanasStore] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-14T00:08:08.147+07:00  INFO 1072 --- [AnanasStore] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-14T00:08:08.477+07:00  INFO 1072 --- [AnanasStore] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-14T00:08:08.503+07:00  INFO 1072 --- [AnanasStore] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-14T00:08:08.672+07:00  INFO 1072 --- [AnanasStore] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4a2e1e52
+2024-08-14T00:08:08.675+07:00  INFO 1072 --- [AnanasStore] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-14T00:08:09.005+07:00 ERROR 1072 --- [AnanasStore] [main] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Association 'com.example.ananasstore.entity.ProductDetailEntity.orderDetails' is 'mappedBy' a property named 'productDetail' which references the wrong entity type 'com.example.ananasstore.entity.ProductEntity', expected 'com.example.ananasstore.entity.ProductDetailEntity'
+2024-08-14T00:08:09.006+07:00  WARN 1072 --- [AnanasStore] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Association 'com.example.ananasstore.entity.ProductDetailEntity.orderDetails' is 'mappedBy' a property named 'productDetail' which references the wrong entity type 'com.example.ananasstore.entity.ProductEntity', expected 'com.example.ananasstore.entity.ProductDetailEntity'
+2024-08-14T00:08:09.007+07:00  INFO 1072 --- [AnanasStore] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-08-14T00:08:09.088+07:00  INFO 1072 --- [AnanasStore] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-08-14T00:08:09.090+07:00  INFO 1072 --- [AnanasStore] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-08-14T00:08:09.102+07:00  INFO 1072 --- [AnanasStore] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
 
 Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2024-08-13T23:56:40.404+07:00 ERROR 11056 --- [AnanasStore] [main] o.s.boot.SpringApplication               : Application run failed
+2024-08-14T00:08:09.120+07:00 ERROR 1072 --- [AnanasStore] [main] o.s.boot.SpringApplication               : Application run failed
 
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Identifier field 'prodcutDetailId' named in '@MapsId' does not exist in entity 'com.example.ananasstore.entity.CartEntity'
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Association 'com.example.ananasstore.entity.ProductDetailEntity.orderDetails' is 'mappedBy' a property named 'productDetail' which references the wrong entity type 'com.example.ananasstore.entity.ProductEntity', expected 'com.example.ananasstore.entity.ProductDetailEntity'
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1806) ~[spring-beans-6.1.11.jar:6.1.11]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.11.jar:6.1.11]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.11.jar:6.1.11]
@@ -47,16 +47,15 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.3.2.jar:3.3.2]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.3.2.jar:3.3.2]
 	at com.example.ananasstore.AnanasStoreApplication.main(AnanasStoreApplication.java:11) ~[classes/:na]
-Caused by: org.hibernate.AnnotationException: Identifier field 'prodcutDetailId' named in '@MapsId' does not exist in entity 'com.example.ananasstore.entity.CartEntity'
-	at org.hibernate.boot.model.internal.AnnotatedJoinColumns.resolveMapsId(AnnotatedJoinColumns.java:230) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.boot.model.internal.TableBinder.linkJoinColumnWithValueOverridingNameIfImplicit(TableBinder.java:814) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.boot.model.internal.TableBinder.bindImplicitPrimaryKeyReference(TableBinder.java:608) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.boot.model.internal.TableBinder.bindExplicitColumns(TableBinder.java:586) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.boot.model.internal.TableBinder.bindForeignKey(TableBinder.java:567) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.boot.model.internal.ToOneFkSecondPass.doSecondPass(ToOneFkSecondPass.java:123) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processEndOfQueue(InFlightMetadataCollectorImpl.java:1906) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processFkSecondPassesInOrder(InFlightMetadataCollectorImpl.java:1855) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1764) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+Caused by: org.hibernate.AnnotationException: Association 'com.example.ananasstore.entity.ProductDetailEntity.orderDetails' is 'mappedBy' a property named 'productDetail' which references the wrong entity type 'com.example.ananasstore.entity.ProductEntity', expected 'com.example.ananasstore.entity.ProductDetailEntity'
+	at org.hibernate.boot.model.internal.BinderHelper.checkMappedByType(BinderHelper.java:1164) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder.isReversePropertyInJoin(CollectionBinder.java:1642) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder.noAssociationTable(CollectionBinder.java:1653) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder.bindStarToManySecondPass(CollectionBinder.java:1614) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder$1.secondPass(CollectionBinder.java:1605) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.internal.CollectionSecondPass.doSecondPass(CollectionSecondPass.java:45) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1811) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1770) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
 	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:334) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
 	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1431) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
 	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1502) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
@@ -68,8 +67,100 @@ Caused by: org.hibernate.AnnotationException: Identifier field 'prodcutDetailId'
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853) ~[spring-beans-6.1.11.jar:6.1.11]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802) ~[spring-beans-6.1.11.jar:6.1.11]
 	... 15 common frames omitted
-Caused by: org.hibernate.MappingException: component: com.example.ananasstore.entity.key.CartKey property not found: prodcutDetailId
-	at org.hibernate.mapping.Component.getProperty(Component.java:506) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.boot.model.internal.AnnotatedJoinColumns.resolveMapsId(AnnotatedJoinColumns.java:221) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	... 33 common frames omitted
 
+2024-08-14T00:11:26.314+07:00  INFO 880 --- [AnanasStore] [main] c.e.ananasstore.AnanasStoreApplication   : Starting AnanasStoreApplication using Java 21.0.1 with PID 880 (F:\Project2024\AnanasStore\target\classes started by LaptopCuaH in F:\Project2024\AnanasStore)
+2024-08-14T00:11:26.318+07:00  INFO 880 --- [AnanasStore] [main] c.e.ananasstore.AnanasStoreApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-08-14T00:11:27.028+07:00  INFO 880 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-14T00:11:27.029+07:00  INFO 880 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-08-14T00:11:27.051+07:00  INFO 880 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 0 JDBC repository interfaces.
+2024-08-14T00:11:27.063+07:00  INFO 880 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-14T00:11:27.065+07:00  INFO 880 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-14T00:11:27.071+07:00  INFO 880 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 JPA repository interfaces.
+2024-08-14T00:11:27.359+07:00  WARN 880 --- [AnanasStore] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-08-14T00:11:27.398+07:00  INFO 880 --- [AnanasStore] [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-08-14T00:11:27.742+07:00  INFO 880 --- [AnanasStore] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-14T00:11:27.757+07:00  INFO 880 --- [AnanasStore] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-14T00:11:27.758+07:00  INFO 880 --- [AnanasStore] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-14T00:11:27.818+07:00  INFO 880 --- [AnanasStore] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-14T00:11:27.819+07:00  INFO 880 --- [AnanasStore] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1446 ms
+2024-08-14T00:11:27.988+07:00  INFO 880 --- [AnanasStore] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-14T00:11:28.044+07:00  INFO 880 --- [AnanasStore] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-14T00:11:28.077+07:00  INFO 880 --- [AnanasStore] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-14T00:11:28.423+07:00  INFO 880 --- [AnanasStore] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-14T00:11:28.450+07:00  INFO 880 --- [AnanasStore] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-14T00:11:28.625+07:00  INFO 880 --- [AnanasStore] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@54b44879
+2024-08-14T00:11:28.628+07:00  INFO 880 --- [AnanasStore] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-14T00:11:29.269+07:00  WARN 880 --- [AnanasStore] [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.example.ananasstore.entity.key.CartKey
+2024-08-14T00:11:29.270+07:00  WARN 880 --- [AnanasStore] [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.example.ananasstore.entity.key.CartKey
+2024-08-14T00:11:29.270+07:00  WARN 880 --- [AnanasStore] [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.example.ananasstore.entity.key.OrderDetailKey
+2024-08-14T00:11:29.270+07:00  WARN 880 --- [AnanasStore] [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.example.ananasstore.entity.key.OrderDetailKey
+2024-08-14T00:11:30.430+07:00  INFO 880 --- [AnanasStore] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-14T00:11:30.461+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-14T00:11:30.461+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "account" does not exist, skipping
+2024-08-14T00:11:30.462+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-14T00:11:30.463+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "account" does not exist, skipping
+2024-08-14T00:11:30.464+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-14T00:11:30.464+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "cart_entity" does not exist, skipping
+2024-08-14T00:11:30.465+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-14T00:11:30.465+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "cart_entity" does not exist, skipping
+2024-08-14T00:11:30.466+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-14T00:11:30.466+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "order_detail" does not exist, skipping
+2024-08-14T00:11:30.467+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-14T00:11:30.467+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "order_detail" does not exist, skipping
+2024-08-14T00:11:30.467+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-14T00:11:30.468+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "orders" does not exist, skipping
+2024-08-14T00:11:30.468+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-14T00:11:30.468+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "product" does not exist, skipping
+2024-08-14T00:11:30.469+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-14T00:11:30.469+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "product" does not exist, skipping
+2024-08-14T00:11:30.470+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-14T00:11:30.470+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "product" does not exist, skipping
+2024-08-14T00:11:30.471+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-14T00:11:30.472+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "product" does not exist, skipping
+2024-08-14T00:11:30.473+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-14T00:11:30.473+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "product_detail_entity" does not exist, skipping
+2024-08-14T00:11:30.474+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-14T00:11:30.474+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "product_detail_entity" does not exist, skipping
+2024-08-14T00:11:30.476+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-14T00:11:30.476+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "product_type" does not exist, skipping
+2024-08-14T00:11:30.477+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-14T00:11:30.477+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "react" does not exist, skipping
+2024-08-14T00:11:30.477+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-14T00:11:30.477+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "react" does not exist, skipping
+2024-08-14T00:11:30.479+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-14T00:11:30.479+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "account" does not exist, skipping
+2024-08-14T00:11:30.480+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-14T00:11:30.480+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "cart_entity" does not exist, skipping
+2024-08-14T00:11:30.480+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-14T00:11:30.481+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "category" does not exist, skipping
+2024-08-14T00:11:30.481+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-14T00:11:30.482+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "collection" does not exist, skipping
+2024-08-14T00:11:30.482+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-14T00:11:30.483+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "gender" does not exist, skipping
+2024-08-14T00:11:30.483+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-14T00:11:30.483+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "order_detail" does not exist, skipping
+2024-08-14T00:11:30.483+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-14T00:11:30.484+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "orders" does not exist, skipping
+2024-08-14T00:11:30.484+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-14T00:11:30.484+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "order_status" does not exist, skipping
+2024-08-14T00:11:30.484+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-14T00:11:30.485+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "product" does not exist, skipping
+2024-08-14T00:11:30.485+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-14T00:11:30.485+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "product_detail_entity" does not exist, skipping
+2024-08-14T00:11:30.486+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-14T00:11:30.486+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "product_type" does not exist, skipping
+2024-08-14T00:11:30.487+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-14T00:11:30.487+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "promotion_entity" does not exist, skipping
+2024-08-14T00:11:30.487+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-14T00:11:30.487+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "react" does not exist, skipping
+2024-08-14T00:11:30.488+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-14T00:11:30.488+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "role" does not exist, skipping
+2024-08-14T00:11:30.489+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-14T00:11:30.489+07:00  WARN 880 --- [AnanasStore] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "status_product" does not exist, skipping
+2024-08-14T00:11:30.696+07:00  INFO 880 --- [AnanasStore] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-14T00:11:30.753+07:00  WARN 880 --- [AnanasStore] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-14T00:11:31.697+07:00  INFO 880 --- [AnanasStore] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-08-14T00:11:31.705+07:00  INFO 880 --- [AnanasStore] [main] c.e.ananasstore.AnanasStoreApplication   : Started AnanasStoreApplication in 5.895 seconds (process running for 6.628)
+2024-08-14T00:16:24.236+07:00  INFO 880 --- [AnanasStore] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-14T00:16:24.239+07:00  INFO 880 --- [AnanasStore] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-08-14T00:16:24.243+07:00  INFO 880 --- [AnanasStore] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

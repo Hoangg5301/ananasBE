@@ -19,7 +19,7 @@ public class CartEntity {
     private AccountEntity account;
 
     @ManyToOne
-    @MapsId("prodcutDetailId")
+    @MapsId("productDetailId")
     @JoinColumn(name = "productDetailId")
     private ProductDetailEntity productDetail;
 

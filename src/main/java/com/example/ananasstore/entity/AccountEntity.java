@@ -3,7 +3,6 @@ package com.example.ananasstore.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.context.annotation.EnableMBeanExport;
 
 import java.time.LocalDateTime;
 import java.util.Set;
