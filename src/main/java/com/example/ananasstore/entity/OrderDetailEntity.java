@@ -15,12 +15,12 @@ public class OrderDetailEntity {
 
     @ManyToOne
     @MapsId("orderId")
-    @JoinColumn(name = "orderId")
+    @JoinColumn(name = "order_id")
     private OrderEntity order;
 
     @ManyToOne
     @MapsId("productDetailId")
-    @JoinColumn(name = "productDetailId")
+    @JoinColumn(name = "product_detail_id")
     private ProductDetailEntity productDetail;
 
     @Column(name = "quantity")

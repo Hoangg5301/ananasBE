@@ -9,9 +9,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class CartKey {
-    @Column(name = "accountId")
     private int accountId;
 
-    @Column(name = "productDetailId")
     private int productDetailId;
 }

@@ -8,19 +8,19 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "CartEntity")
+@Table(name = "cart_entity")
 public class CartEntity {
     @EmbeddedId
     private CartKey cartId;
 
     @ManyToOne
     @MapsId("accountId")
-    @JoinColumn(name = "accountId")
+    @JoinColumn(name = "account_id")
     private AccountEntity account;
 
     @ManyToOne
     @MapsId("productDetailId")
-    @JoinColumn(name = "productDetailId")
+    @JoinColumn(name = "product_detail_id")
     private ProductDetailEntity productDetail;
 
     @Column(name = "quantity")
