@@ -9,16 +9,16 @@ import java.util.Set;
 @Getter
 @Setter
 @Entity
-@Table(name = "Role")
+@Table(name = "role")
 public class RoleEntity {
     @Id
-    @Column(name = "roleId")
+    @Column(name = "role_id")
     private int roleId;
 
-    @Column(name = "roleName")
+    @Column(name = "role_name")
     private String roleName;
 
-    @Column(name = "permissionList")
+    @Column(name = "permission_list")
     private String permissionList;
 
     @OneToMany(mappedBy = "role")

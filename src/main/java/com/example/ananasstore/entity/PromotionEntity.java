@@ -9,14 +9,14 @@ import java.util.Set;
 @Getter
 @Setter
 @Entity
-@Table(name = "PromotionEntity")
+@Table(name = "promotion")
 public class PromotionEntity {
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
-    @Column(name = "promotionId")
+    @Column(name = "promotion_id")
     private int promotionId;
 
-    @Column(name = "promotionName")
+    @Column(name = "promotion_name")
     private String promotionName;
 
     @Column(name = "description")

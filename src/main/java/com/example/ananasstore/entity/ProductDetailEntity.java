@@ -9,10 +9,10 @@ import java.util.Set;
 @Getter
 @Setter
 @Entity
-@Table(name = "ProductDetailEntity")
+@Table(name = "product_detail")
 public class ProductDetailEntity {
     @Id
-    @Column(name = "productDetailId")
+    @Column(name = "product_detail_id")
     private int productDetailId;
 
     @Column(name = "size")
@@ -37,11 +37,11 @@ public class ProductDetailEntity {
     private String img4;
 
     @ManyToOne
-    @JoinColumn(name = "productId")
+    @JoinColumn(name = "product_id")
     private ProductEntity product;
 
     @ManyToOne
-    @JoinColumn(name = "statusProductId")
+    @JoinColumn(name = "status_product_id")
     private StatusProductEntity statusProduct;
 
     @OneToMany(mappedBy = "productDetail")

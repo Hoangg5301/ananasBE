@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Set;
 
-@Table(name = "OrderStatus")
+@Table(name = "order_status")
 @Getter
 @Setter
 @Entity
@@ -16,13 +16,13 @@ public class OrderStatusEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "orderStatusId")
+    @Column(name = "order_status_id")
     private int orderStatusId;
 
-    @Column(name = "statusName")
+    @Column(name = "status_name")
     private String statusName;
 
-    @Column(name = "statusDate")
+    @Column(name = "status_date")
     private LocalDateTime statusDate;
 
     //join with Order

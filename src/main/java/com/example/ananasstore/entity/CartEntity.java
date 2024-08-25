@@ -8,7 +8,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "cart_entity")
+@Table(name = "cart")
 public class CartEntity {
     @EmbeddedId
     private CartKey cartId;

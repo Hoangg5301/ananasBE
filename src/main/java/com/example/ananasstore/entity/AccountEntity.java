@@ -11,14 +11,14 @@ import java.util.Set;
 @Getter
 @Setter
 @Entity
-@Table(name = "Account")
+@Table(name = "account")
 public class AccountEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "accountId", length = 50)
+    @Column(name = "account_id", length = 50)
     private int accountId;
 
-    @Column(name = "userName")
+    @Column(name = "user_name")
     private String userName;
 
     @Column(name = "password")
@@ -30,19 +30,19 @@ public class AccountEntity {
     @Column(name = "address")
     private String address;
 
-    @Column(name = "phoneNumber")
+    @Column(name = "phone_number")
     private String phoneNumber;
 
-    @Column(name = "dateOfBirth")
+    @Column(name = "date_of_birth")
     private LocalDateTime dateOfBirth;
 
 //    Account join Gender
     @ManyToOne
-    @JoinColumn(name = "genderId")
+    @JoinColumn(name = "gender_id")
     private GenderEntity gender;
 
     @ManyToOne
-    @JoinColumn(name = "roleId")
+    @JoinColumn(name = "role_id")
     private RoleEntity role;
 
     //join cart
@@ -52,7 +52,7 @@ public class AccountEntity {
     // Join create React
     @ManyToMany
     @JoinTable(name = "React",
-            joinColumns = @JoinColumn(name = "accountId"),
-            inverseJoinColumns = @JoinColumn(name = "productId"))
+            joinColumns = @JoinColumn(name = "account_id"),
+            inverseJoinColumns = @JoinColumn(name = "product_id"))
     private Set<ProductEntity> products;
 }

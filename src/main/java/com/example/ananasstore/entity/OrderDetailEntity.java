@@ -8,7 +8,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(name = "OrderDetail")
+@Table(name = "order_detail")
 public class OrderDetailEntity {
     @EmbeddedId
     private OrderDetailKey oderDetailId;

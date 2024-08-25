@@ -9,22 +9,22 @@ import java.util.Set;
 @Getter
 @Setter
 @Entity
-@Table(name = "Orders")
+@Table(name = "orders")
 public class OrderEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "orderId")
+    @Column(name = "order_id")
     private int orderId;
 
     @Column(name = "address")
     private String address;
 
-    @Column(name = "phoneNumber")
+    @Column(name = "phone_number")
     private String phoneNumber;
 
     //Join with orderStatus
     @ManyToOne()
-    @JoinColumn(name = "oderStatusId")
+    @JoinColumn(name = "oder_status_id")
     private OrderStatusEntity orderStatus;
 
     @OneToMany(mappedBy = "order")

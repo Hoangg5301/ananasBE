@@ -9,21 +9,21 @@ import java.util.Set;
 @Getter
 @Setter
 @Entity
-@Table(name = "ProductType")
+@Table(name = "product_type")
 public class ProductTypeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "productTypeId")
+    @Column(name = "product_type_id")
     private int productTypeId;
 
-    @Column(name = "productTypeName")
+    @Column(name = "product_type_name")
     private String productTypeName;
 
     @Column(name = "attribute")
     private String attribute;
 
     @ManyToOne
-    @JoinColumn(name = "categoryId")
+    @JoinColumn(name = "category_id")
     private CategoryEntity category;
 
     @OneToMany(mappedBy = "productType")

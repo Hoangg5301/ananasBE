@@ -9,15 +9,15 @@ import java.util.Set;
 @Setter
 @Getter
 @Entity
-@Table(name = "Gender")
+@Table(name = "gender")
 
 public class GenderEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "genderId", length = 50)
+    @Column(name = "gender_id", length = 50)
     private int genderId;
 
-    @Column(name = "genderName")
+    @Column(name = "gender_name")
     private String genderName;
 
     @OneToMany(mappedBy = "gender", fetch = FetchType.LAZY, cascade = CascadeType.ALL)

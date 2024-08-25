@@ -6,7 +6,7 @@ import lombok.Setter;
 
 import java.util.Set;
 
-@Table(name = "Product")
+@Table(name = "product")
 @Getter
 @Setter
 @Entity
@@ -14,10 +14,10 @@ public class ProductEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "productId")
+    @Column(name = "product_id")
     private int productId;
 
-    @Column(name = "productName")
+    @Column(name = "product_name")
     private String productName;
 
     @Column(name = "description")
@@ -32,23 +32,23 @@ public class ProductEntity {
     @Column(name = "style")
     private String style;
 
-    @Column(name = "informationDetail", columnDefinition = "TEXT")
+    @Column(name = "information_detail", columnDefinition = "TEXT")
     private String informationDetail;
 
     @ManyToOne
-    @JoinColumn(name = "genderId")
+    @JoinColumn(name = "gender_id")
     private GenderEntity gender;
 
     @ManyToOne
-    @JoinColumn(name = "promotionId")
+    @JoinColumn(name = "promotion_id")
     private PromotionEntity promotion;
 
     @ManyToOne
-    @JoinColumn(name = "collectionId")
+    @JoinColumn(name = "collection_id")
     private CollectionEntity collection;
 
     @ManyToOne
-    @JoinColumn(name = "productTypeId")
+    @JoinColumn(name = "product_type_id")
     private ProductTypeEntity productType;
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.LAZY)

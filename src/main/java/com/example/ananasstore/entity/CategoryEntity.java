@@ -9,14 +9,14 @@ import java.util.Set;
 @Getter
 @Setter
 @Entity
-@Table(name = "Category")
+@Table(name = "category")
 public class CategoryEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "categoryId")
+    @Column(name = "category_id")
     private int categoryId;
 
-    @Column(name = "categoryName")
+    @Column(name = "category_name")
     private String categoryName;
 
     @OneToMany(mappedBy = "category")

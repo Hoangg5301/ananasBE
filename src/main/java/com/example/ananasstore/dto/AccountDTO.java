@@ -4,14 +4,12 @@ import com.example.ananasstore.entity.CartEntity;
 import com.example.ananasstore.entity.GenderEntity;
 import com.example.ananasstore.entity.ProductEntity;
 import com.example.ananasstore.entity.RoleEntity;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import java.time.LocalDateTime;
 import java.util.Set;
 
-@Getter
-@Setter
+@Data
 public class AccountDTO {
     private String userName;
     private String password;
