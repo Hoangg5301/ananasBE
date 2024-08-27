@@ -1,5 +1,6 @@
 package com.example.ananasstore.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -24,9 +25,11 @@ public class OrderEntity {
 
     //Join with orderStatus
     @ManyToOne()
+    @JsonIgnore
     @JoinColumn(name = "oder_status_id")
     private OrderStatusEntity orderStatus;
 
     @OneToMany(mappedBy = "order")
+    @JsonIgnore
     private Set<OrderDetailEntity> orderDetails;
 }

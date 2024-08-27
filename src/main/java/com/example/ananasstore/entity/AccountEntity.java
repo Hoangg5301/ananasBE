@@ -1,9 +1,11 @@
 package com.example.ananasstore.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Set;
 
@@ -12,10 +14,11 @@ import java.util.Set;
 @Setter
 @Entity
 @Table(name = "account")
-public class AccountEntity {
+public class AccountEntity implements Serializable {
+    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "account_id", length = 50)
+    @Column(name = "account_id")
     private int accountId;
 
     @Column(name = "user_name")
@@ -38,18 +41,22 @@ public class AccountEntity {
 
 //    Account join Gender
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "gender_id")
     private GenderEntity gender;
 
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "role_id")
     private RoleEntity role;
 
     //join cart
-    @OneToMany(mappedBy = "account")
+    @JsonIgnore
+    @OneToMany(mappedBy = "account", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<CartEntity> carts;
 
     // Join create React
+    @JsonIgnore
     @ManyToMany
     @JoinTable(name = "React",
             joinColumns = @JoinColumn(name = "account_id"),

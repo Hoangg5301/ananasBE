@@ -13,15 +13,16 @@ import java.util.List;
 @Repository
 public interface AccountRepository extends JpaRepository<AccountEntity, Integer> {
     //find all account
-    @Query(value = "SELECT a.*, g.gender_name, r.role_name " +
-            "FROM account a" +
-            " inner join role r" +
-            "ON r.role_id = a.role_id" +
-            "inner join gender g" +
-            "ON g.gender_id = a.gender_id",
-            nativeQuery = true)
-    List<AccountEntity> findAllAccount(Pageable pageable, Sort sort);
+//    @Query(value = "SELECT a.*, g.gender_name, r.role_name " +
+//            "FROM account a" +
+//            " inner join role r" +
+//            "ON r.role_id = a.role_id" +
+//            "inner join gender g" +
+//            "ON g.gender_id = a.gender_id",
+//            nativeQuery = true)
+//    Page<AccountEntity> findAllAccount(Pageable pageable);
 
-    //add acount
-    void insertAccountEntity(AccountEntity accountEntity);
+    @Query(value = "select a from AccountEntity a")
+    Page<AccountEntity> getAllAccount(Pageable pageable);
+
 }

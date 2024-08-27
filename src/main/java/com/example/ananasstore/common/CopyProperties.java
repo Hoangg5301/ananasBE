@@ -24,17 +24,16 @@ public class CopyProperties {
                 //handle copy
                 char firstChar = Character.toUpperCase(fieldName.charAt(0));
                 // create method name
-                String getterAtribuite = GETMETHOD + firstChar + fieldName.substring(1);
-                String setterAtribute = SETMETHOD + firstChar + fieldName.substring(1);
+                String getterAttribute = GETMETHOD + firstChar + fieldName.substring(1);
+                String setterAttribute = SETMETHOD + firstChar + fieldName.substring(1);
 
                 //create paramtype of method
                 Class<?> paramType =  sourcefield.getType();
-                Class<?> paramTypeTemp =  String.class;
 
-                Method methodGet = sourceClass.getMethod(getterAtribuite);
+                Method methodGet = sourceClass.getMethod(getterAttribute);
                 Object value = methodGet.invoke(source);
 
-                Method methodSet = targetClass.getMethod(setterAtribute, paramType);
+                Method methodSet = targetClass.getMethod(setterAttribute, paramType);
                 methodSet.invoke(target, value);
 
             } catch (NoSuchFieldException e) {

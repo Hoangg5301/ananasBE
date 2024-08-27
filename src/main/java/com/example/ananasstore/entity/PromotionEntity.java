@@ -1,5 +1,6 @@
 package com.example.ananasstore.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -26,5 +27,6 @@ public class PromotionEntity {
     private int discount;
 
     @OneToMany(mappedBy = "promotion")
+    @JsonIgnore
     private Set<ProductEntity> products;
 }
