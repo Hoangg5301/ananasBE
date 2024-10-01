@@ -1,7 +1,6 @@
 package com.example.ananasstore.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.*;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -24,10 +23,9 @@ public class GenderEntity{
     private String genderName;
 
     @OneToMany(mappedBy = "gender", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
-    @JsonIgnore
+    @JsonBackReference
     private Set<AccountEntity> accounts;
 
     @OneToMany(mappedBy = "gender", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
-    @JsonIgnore
     private Set<ProductEntity> products;
 }

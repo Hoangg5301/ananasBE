@@ -27,6 +27,5 @@ public class PromotionEntity {
     private int discount;
 
     @OneToMany(mappedBy = "promotion")
-    @JsonIgnore
     private Set<ProductEntity> products;
 }

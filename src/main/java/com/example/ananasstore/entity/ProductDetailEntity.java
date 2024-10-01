@@ -38,21 +38,17 @@ public class ProductDetailEntity {
     private String img4;
 
     @ManyToOne
-    @JsonIgnore
     @JoinColumn(name = "product_id")
     private ProductEntity product;
 
     @ManyToOne
-    @JsonIgnore
     @JoinColumn(name = "status_product_id")
     private StatusProductEntity statusProduct;
 
     @OneToMany(mappedBy = "productDetail")
-    @JsonIgnore
     private Set<OrderDetailEntity> orderDetails;
 
     @OneToMany(mappedBy = "productDetail")
-    @JsonIgnore
     private Set<CartEntity> carts;
 
 }

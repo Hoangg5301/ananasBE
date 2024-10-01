@@ -22,7 +22,6 @@ public class OrderDetailEntity {
     @ManyToOne
     @MapsId("productDetailId")
     @JoinColumn(name = "product_detail_id")
-    @JsonIgnore
     private ProductDetailEntity productDetail;
 
     @Column(name = "quantity")

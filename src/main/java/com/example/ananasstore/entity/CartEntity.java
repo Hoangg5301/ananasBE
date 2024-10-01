@@ -17,11 +17,9 @@ public class CartEntity {
     @ManyToOne
     @MapsId("accountId")
     @JoinColumn(name = "account_id")
-    @JsonIgnore
     private AccountEntity account;
 
     @ManyToOne
-    @JsonIgnore
     @MapsId("productDetailId")
     @JoinColumn(name = "product_detail_id")
     private ProductDetailEntity productDetail;

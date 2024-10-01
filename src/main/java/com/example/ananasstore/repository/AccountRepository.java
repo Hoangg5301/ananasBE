@@ -3,12 +3,9 @@ package com.example.ananasstore.repository;
 import com.example.ananasstore.entity.AccountEntity;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
 
 @Repository
 public interface AccountRepository extends JpaRepository<AccountEntity, Integer> {
@@ -21,8 +18,22 @@ public interface AccountRepository extends JpaRepository<AccountEntity, Integer>
 //            "ON g.gender_id = a.gender_id",
 //            nativeQuery = true)
 //    Page<AccountEntity> findAllAccount(Pageable pageable);
-
-    @Query(value = "select a from AccountEntity a")
+    @Query(value = "Select * from account", nativeQuery = true)
     Page<AccountEntity> getAllAccount(Pageable pageable);
+
+    //find account by Id
+    @Query(value = "select " +
+            "a.account_id," +
+            "a.password," +
+            "a.email," +
+            "a.user_name," +
+            "a.address," +
+            "a.phone_number," +
+            "a.date_of_birth, " +
+            "a.gender_id, " +
+            "a.role_id" +
+            " from account a " +
+            "where a.account_id = :id", nativeQuery = true)
+    AccountEntity getAccountById(int id);
 
 }

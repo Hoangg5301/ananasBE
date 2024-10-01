@@ -21,6 +21,5 @@ public class StatusProductEntity {
     private String statusProductName;
 
     @OneToMany(mappedBy = "statusProduct")
-    @JsonIgnore
     private Set<ProductDetailEntity> productDetails;
 }

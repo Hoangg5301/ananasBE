@@ -28,6 +28,5 @@ public class OrderStatusEntity {
 
     //join with Order
     @OneToMany(mappedBy = "orderStatus", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JsonIgnore
     private Set<OrderEntity> orders;
 }

@@ -1,6 +1,6 @@
 package com.example.ananasstore.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -23,6 +23,6 @@ public class RoleEntity {
     private String permissionList;
 
     @OneToMany(mappedBy = "role", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JsonIgnore
+    @JsonBackReference
     private Set<AccountEntity> accounts;
 }

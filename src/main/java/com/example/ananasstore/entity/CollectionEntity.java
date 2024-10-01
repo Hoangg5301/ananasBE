@@ -21,6 +21,5 @@ public class CollectionEntity {
     private String collectionName;
 
     @OneToMany(mappedBy = "collection")
-    @JsonIgnore
     private Set<ProductEntity> products;
 }

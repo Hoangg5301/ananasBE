@@ -24,11 +24,9 @@ public class ProductTypeEntity {
     private String attribute;
 
     @ManyToOne
-    @JsonIgnore
     @JoinColumn(name = "category_id")
     private CategoryEntity category;
 
     @OneToMany(mappedBy = "productType")
-    @JsonIgnore
     private Set<ProductEntity> products;
 }

@@ -37,30 +37,24 @@ public class ProductEntity {
     private String informationDetail;
 
     @ManyToOne
-    @JsonIgnore
     @JoinColumn(name = "gender_id")
     private GenderEntity gender;
 
     @ManyToOne
-    @JsonIgnore
     @JoinColumn(name = "promotion_id")
     private PromotionEntity promotion;
 
     @ManyToOne
-    @JsonIgnore
     @JoinColumn(name = "collection_id")
     private CollectionEntity collection;
 
     @ManyToOne
-    @JsonIgnore
     @JoinColumn(name = "product_type_id")
     private ProductTypeEntity productType;
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JsonIgnore
     private Set<ProductDetailEntity> productDetails;
 
     @ManyToMany(mappedBy = "products")
-    @JsonIgnore
     private Set<AccountEntity> accounts;
 }

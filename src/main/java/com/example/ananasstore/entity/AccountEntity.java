@@ -1,6 +1,6 @@
 package com.example.ananasstore.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -41,22 +41,20 @@ public class AccountEntity implements Serializable {
 
 //    Account join Gender
     @ManyToOne
-    @JsonIgnore
     @JoinColumn(name = "gender_id")
+    @JsonManagedReference
     private GenderEntity gender;
 
     @ManyToOne
-    @JsonIgnore
     @JoinColumn(name = "role_id")
+    @JsonManagedReference
     private RoleEntity role;
 
     //join cart
-    @JsonIgnore
     @OneToMany(mappedBy = "account", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<CartEntity> carts;
 
     // Join create React
-    @JsonIgnore
     @ManyToMany
     @JoinTable(name = "React",
             joinColumns = @JoinColumn(name = "account_id"),

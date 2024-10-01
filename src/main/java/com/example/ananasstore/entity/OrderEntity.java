@@ -25,11 +25,9 @@ public class OrderEntity {
 
     //Join with orderStatus
     @ManyToOne()
-    @JsonIgnore
     @JoinColumn(name = "oder_status_id")
     private OrderStatusEntity orderStatus;
 
     @OneToMany(mappedBy = "order")
-    @JsonIgnore
     private Set<OrderDetailEntity> orderDetails;
 }

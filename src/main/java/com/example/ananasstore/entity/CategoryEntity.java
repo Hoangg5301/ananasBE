@@ -21,6 +21,5 @@ public class CategoryEntity {
     private String categoryName;
 
     @OneToMany(mappedBy = "category")
-    @JsonIgnore
     private Set<ProductTypeEntity> productTypes;
 }
