@@ -1,339 +1,43 @@
-2024-09-05T00:00:48.574+07:00  INFO 5928 --- [AnanasStore] [main] c.e.ananasstore.AnanasStoreApplication   : Starting AnanasStoreApplication using Java 21.0.1 with PID 5928 (F:\Project2024\AnanasStore\target\classes started by LaptopCuaH in F:\Project2024\AnanasStore)
-2024-09-05T00:00:48.627+07:00  INFO 5928 --- [AnanasStore] [main] c.e.ananasstore.AnanasStoreApplication   : No active profile set, falling back to 1 default profile: "default"
-2024-09-05T00:00:50.343+07:00  INFO 5928 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-09-05T00:00:50.346+07:00  INFO 5928 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2024-09-05T00:00:50.410+07:00  INFO 5928 --- [AnanasStore] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.ananasstore.repository.AccountRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-09-05T00:00:50.411+07:00  INFO 5928 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 56 ms. Found 0 JDBC repository interfaces.
-2024-09-05T00:00:50.448+07:00  INFO 5928 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-09-05T00:00:50.451+07:00  INFO 5928 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-09-05T00:00:50.576+07:00  INFO 5928 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 112 ms. Found 1 JPA repository interface.
-2024-09-05T00:00:50.984+07:00  WARN 5928 --- [AnanasStore] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
-2024-09-05T00:00:51.309+07:00  INFO 5928 --- [AnanasStore] [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
-2024-09-05T00:00:51.780+07:00  INFO 5928 --- [AnanasStore] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-09-05T00:00:51.795+07:00  INFO 5928 --- [AnanasStore] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-09-05T00:00:51.795+07:00  INFO 5928 --- [AnanasStore] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
-2024-09-05T00:00:51.864+07:00  INFO 5928 --- [AnanasStore] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-09-05T00:00:51.865+07:00  INFO 5928 --- [AnanasStore] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3126 ms
-2024-09-05T00:00:52.078+07:00  INFO 5928 --- [AnanasStore] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-09-05T00:00:52.164+07:00  INFO 5928 --- [AnanasStore] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
-2024-09-05T00:00:52.212+07:00  INFO 5928 --- [AnanasStore] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-09-05T00:00:52.666+07:00  INFO 5928 --- [AnanasStore] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-09-05T00:00:52.703+07:00  INFO 5928 --- [AnanasStore] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-09-05T00:00:53.142+07:00  INFO 5928 --- [AnanasStore] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6c6928c
-2024-09-05T00:00:53.145+07:00  INFO 5928 --- [AnanasStore] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-09-05T00:00:53.874+07:00  WARN 5928 --- [AnanasStore] [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.example.ananasstore.entity.key.CartKey
-2024-09-05T00:00:53.874+07:00  WARN 5928 --- [AnanasStore] [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.example.ananasstore.entity.key.CartKey
-2024-09-05T00:00:53.875+07:00  WARN 5928 --- [AnanasStore] [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.example.ananasstore.entity.key.OrderDetailKey
-2024-09-05T00:00:53.875+07:00  WARN 5928 --- [AnanasStore] [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.example.ananasstore.entity.key.OrderDetailKey
-2024-09-05T00:00:54.987+07:00  INFO 5928 --- [AnanasStore] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-09-05T00:00:55.346+07:00  INFO 5928 --- [AnanasStore] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-09-05T00:00:55.720+07:00  INFO 5928 --- [AnanasStore] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-09-05T00:00:55.812+07:00  WARN 5928 --- [AnanasStore] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-09-05T00:00:56.476+07:00  INFO 5928 --- [AnanasStore] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-09-05T00:00:56.485+07:00  INFO 5928 --- [AnanasStore] [main] c.e.ananasstore.AnanasStoreApplication   : Started AnanasStoreApplication in 8.446 seconds (process running for 10.812)
-2024-09-05T00:15:15.879+07:00  INFO 5928 --- [AnanasStore] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-09-05T00:15:15.882+07:00  INFO 5928 --- [AnanasStore] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-09-05T00:15:15.885+07:00  INFO 5928 --- [AnanasStore] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-09-05T00:15:22.209+07:00  INFO 15484 --- [AnanasStore] [main] c.e.ananasstore.AnanasStoreApplication   : Starting AnanasStoreApplication using Java 21.0.1 with PID 15484 (F:\Project2024\AnanasStore\target\classes started by LaptopCuaH in F:\Project2024\AnanasStore)
-2024-09-05T00:15:22.213+07:00  INFO 15484 --- [AnanasStore] [main] c.e.ananasstore.AnanasStoreApplication   : No active profile set, falling back to 1 default profile: "default"
-2024-09-05T00:15:22.912+07:00  INFO 15484 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-09-05T00:15:22.914+07:00  INFO 15484 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2024-09-05T00:15:22.948+07:00  INFO 15484 --- [AnanasStore] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.ananasstore.repository.AccountRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-09-05T00:15:22.949+07:00  INFO 15484 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30 ms. Found 0 JDBC repository interfaces.
-2024-09-05T00:15:22.962+07:00  INFO 15484 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-09-05T00:15:22.963+07:00  INFO 15484 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-09-05T00:15:22.989+07:00  INFO 15484 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 1 JPA repository interface.
-2024-09-05T00:15:23.271+07:00  WARN 15484 --- [AnanasStore] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
-2024-09-05T00:15:23.308+07:00  INFO 15484 --- [AnanasStore] [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
-2024-09-05T00:15:23.653+07:00  INFO 15484 --- [AnanasStore] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-09-05T00:15:23.669+07:00  INFO 15484 --- [AnanasStore] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-09-05T00:15:23.670+07:00  INFO 15484 --- [AnanasStore] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
-2024-09-05T00:15:23.725+07:00  INFO 15484 --- [AnanasStore] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-09-05T00:15:23.725+07:00  INFO 15484 --- [AnanasStore] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1459 ms
-2024-09-05T00:15:23.886+07:00  INFO 15484 --- [AnanasStore] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-09-05T00:15:23.942+07:00  INFO 15484 --- [AnanasStore] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
-2024-09-05T00:15:23.973+07:00  INFO 15484 --- [AnanasStore] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-09-05T00:15:24.334+07:00  INFO 15484 --- [AnanasStore] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-09-05T00:15:24.367+07:00  INFO 15484 --- [AnanasStore] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-09-05T00:15:24.551+07:00  INFO 15484 --- [AnanasStore] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6cbdd1c5
-2024-09-05T00:15:24.553+07:00  INFO 15484 --- [AnanasStore] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-09-05T00:15:25.062+07:00  WARN 15484 --- [AnanasStore] [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.example.ananasstore.entity.key.CartKey
-2024-09-05T00:15:25.063+07:00  WARN 15484 --- [AnanasStore] [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.example.ananasstore.entity.key.CartKey
-2024-09-05T00:15:25.063+07:00  WARN 15484 --- [AnanasStore] [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.example.ananasstore.entity.key.OrderDetailKey
-2024-09-05T00:15:25.063+07:00  WARN 15484 --- [AnanasStore] [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.example.ananasstore.entity.key.OrderDetailKey
-2024-09-05T00:15:25.998+07:00  INFO 15484 --- [AnanasStore] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-09-05T00:15:26.279+07:00  INFO 15484 --- [AnanasStore] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-09-05T00:15:26.715+07:00  INFO 15484 --- [AnanasStore] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-09-05T00:15:26.787+07:00  WARN 15484 --- [AnanasStore] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-09-05T00:15:27.469+07:00  INFO 15484 --- [AnanasStore] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-09-05T00:15:27.480+07:00  INFO 15484 --- [AnanasStore] [main] c.e.ananasstore.AnanasStoreApplication   : Started AnanasStoreApplication in 5.791 seconds (process running for 6.568)
-2024-09-05T00:15:51.919+07:00  INFO 15484 --- [AnanasStore] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-09-05T00:15:51.919+07:00  INFO 15484 --- [AnanasStore] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-09-05T00:15:51.920+07:00  INFO 15484 --- [AnanasStore] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2024-09-05T00:15:51.981+07:00  WARN 15484 --- [AnanasStore] [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'account_id' for method parameter type int is not present]
-2024-09-05T00:18:28.929+07:00  INFO 15484 --- [AnanasStore] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-09-05T00:18:28.929+07:00  INFO 15484 --- [AnanasStore] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-09-05T00:18:28.929+07:00  INFO 15484 --- [AnanasStore] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-09-05T00:18:33.316+07:00  INFO 9984 --- [AnanasStore] [main] c.e.ananasstore.AnanasStoreApplication   : Starting AnanasStoreApplication using Java 21.0.1 with PID 9984 (F:\Project2024\AnanasStore\target\classes started by LaptopCuaH in F:\Project2024\AnanasStore)
-2024-09-05T00:18:33.331+07:00  INFO 9984 --- [AnanasStore] [main] c.e.ananasstore.AnanasStoreApplication   : No active profile set, falling back to 1 default profile: "default"
-2024-09-05T00:18:34.218+07:00  INFO 9984 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-09-05T00:18:34.218+07:00  INFO 9984 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2024-09-05T00:18:34.264+07:00  INFO 9984 --- [AnanasStore] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.ananasstore.repository.AccountRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-09-05T00:18:34.264+07:00  INFO 9984 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 0 JDBC repository interfaces.
-2024-09-05T00:18:34.280+07:00  INFO 9984 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-09-05T00:18:34.280+07:00  INFO 9984 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-09-05T00:18:34.318+07:00  INFO 9984 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29 ms. Found 1 JPA repository interface.
-2024-09-05T00:18:34.681+07:00  WARN 9984 --- [AnanasStore] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
-2024-09-05T00:18:34.726+07:00  INFO 9984 --- [AnanasStore] [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
-2024-09-05T00:18:35.151+07:00  INFO 9984 --- [AnanasStore] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-09-05T00:18:35.167+07:00  INFO 9984 --- [AnanasStore] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-09-05T00:18:35.167+07:00  INFO 9984 --- [AnanasStore] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
-2024-09-05T00:18:35.256+07:00  INFO 9984 --- [AnanasStore] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-09-05T00:18:35.256+07:00  INFO 9984 --- [AnanasStore] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1856 ms
-2024-09-05T00:18:35.468+07:00  INFO 9984 --- [AnanasStore] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-09-05T00:18:35.537+07:00  INFO 9984 --- [AnanasStore] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
-2024-09-05T00:18:35.583+07:00  INFO 9984 --- [AnanasStore] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-09-05T00:18:36.006+07:00  INFO 9984 --- [AnanasStore] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-09-05T00:18:36.038+07:00  INFO 9984 --- [AnanasStore] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-09-05T00:18:36.271+07:00  INFO 9984 --- [AnanasStore] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@67f591c2
-2024-09-05T00:18:36.271+07:00  INFO 9984 --- [AnanasStore] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-09-05T00:18:36.954+07:00  WARN 9984 --- [AnanasStore] [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.example.ananasstore.entity.key.CartKey
-2024-09-05T00:18:36.954+07:00  WARN 9984 --- [AnanasStore] [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.example.ananasstore.entity.key.CartKey
-2024-09-05T00:18:36.954+07:00  WARN 9984 --- [AnanasStore] [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.example.ananasstore.entity.key.OrderDetailKey
-2024-09-05T00:18:36.954+07:00  WARN 9984 --- [AnanasStore] [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.example.ananasstore.entity.key.OrderDetailKey
-2024-09-05T00:18:38.087+07:00  INFO 9984 --- [AnanasStore] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-09-05T00:18:38.356+07:00  INFO 9984 --- [AnanasStore] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-09-05T00:18:39.560+07:00  INFO 9984 --- [AnanasStore] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-09-05T00:18:39.830+07:00  WARN 9984 --- [AnanasStore] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-09-05T00:18:41.449+07:00  INFO 9984 --- [AnanasStore] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-09-05T00:18:41.465+07:00  INFO 9984 --- [AnanasStore] [main] c.e.ananasstore.AnanasStoreApplication   : Started AnanasStoreApplication in 8.831 seconds (process running for 10.862)
-2024-09-05T00:18:48.903+07:00  INFO 9984 --- [AnanasStore] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-09-05T00:18:48.913+07:00  INFO 9984 --- [AnanasStore] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-09-05T00:18:48.914+07:00  INFO 9984 --- [AnanasStore] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2024-09-05T00:20:31.948+07:00  WARN 9984 --- [AnanasStore] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=50s873ms580µs).
-2024-09-05T00:20:32.021+07:00  INFO 9984 --- [AnanasStore] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-09-05T00:20:32.021+07:00  INFO 9984 --- [AnanasStore] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-09-05T00:20:32.037+07:00  INFO 9984 --- [AnanasStore] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-09-05T00:20:36.943+07:00  INFO 2588 --- [AnanasStore] [main] c.e.ananasstore.AnanasStoreApplication   : Starting AnanasStoreApplication using Java 21.0.1 with PID 2588 (F:\Project2024\AnanasStore\target\classes started by LaptopCuaH in F:\Project2024\AnanasStore)
-2024-09-05T00:20:36.946+07:00  INFO 2588 --- [AnanasStore] [main] c.e.ananasstore.AnanasStoreApplication   : No active profile set, falling back to 1 default profile: "default"
-2024-09-05T00:20:37.709+07:00  INFO 2588 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-09-05T00:20:37.711+07:00  INFO 2588 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2024-09-05T00:20:37.754+07:00  INFO 2588 --- [AnanasStore] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.ananasstore.repository.AccountRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-09-05T00:20:37.755+07:00  INFO 2588 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31 ms. Found 0 JDBC repository interfaces.
-2024-09-05T00:20:37.767+07:00  INFO 2588 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-09-05T00:20:37.768+07:00  INFO 2588 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-09-05T00:20:37.796+07:00  INFO 2588 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24 ms. Found 1 JPA repository interface.
-2024-09-05T00:20:38.140+07:00  WARN 2588 --- [AnanasStore] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
-2024-09-05T00:20:38.202+07:00  INFO 2588 --- [AnanasStore] [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
-2024-09-05T00:20:38.602+07:00  INFO 2588 --- [AnanasStore] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-09-05T00:20:38.617+07:00  INFO 2588 --- [AnanasStore] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-09-05T00:20:38.617+07:00  INFO 2588 --- [AnanasStore] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
-2024-09-05T00:20:38.711+07:00  INFO 2588 --- [AnanasStore] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-09-05T00:20:38.712+07:00  INFO 2588 --- [AnanasStore] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1708 ms
-2024-09-05T00:20:38.946+07:00  INFO 2588 --- [AnanasStore] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-09-05T00:20:39.036+07:00  INFO 2588 --- [AnanasStore] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
-2024-09-05T00:20:39.086+07:00  INFO 2588 --- [AnanasStore] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-09-05T00:20:39.567+07:00  INFO 2588 --- [AnanasStore] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-09-05T00:20:39.603+07:00  INFO 2588 --- [AnanasStore] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-09-05T00:20:39.827+07:00  INFO 2588 --- [AnanasStore] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@ca2cd5e
-2024-09-05T00:20:39.830+07:00  INFO 2588 --- [AnanasStore] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-09-05T00:20:40.470+07:00  WARN 2588 --- [AnanasStore] [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.example.ananasstore.entity.key.CartKey
-2024-09-05T00:20:40.470+07:00  WARN 2588 --- [AnanasStore] [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.example.ananasstore.entity.key.CartKey
-2024-09-05T00:20:40.471+07:00  WARN 2588 --- [AnanasStore] [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.example.ananasstore.entity.key.OrderDetailKey
-2024-09-05T00:20:40.471+07:00  WARN 2588 --- [AnanasStore] [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.example.ananasstore.entity.key.OrderDetailKey
-2024-09-05T00:20:41.634+07:00  INFO 2588 --- [AnanasStore] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-09-05T00:20:41.968+07:00  INFO 2588 --- [AnanasStore] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-09-05T00:20:43.599+07:00  INFO 2588 --- [AnanasStore] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-09-05T00:20:43.880+07:00  WARN 2588 --- [AnanasStore] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-09-05T00:20:45.156+07:00  INFO 2588 --- [AnanasStore] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-09-05T00:20:45.174+07:00  INFO 2588 --- [AnanasStore] [main] c.e.ananasstore.AnanasStoreApplication   : Started AnanasStoreApplication in 8.824 seconds (process running for 9.8)
-2024-09-05T00:20:59.515+07:00  INFO 2588 --- [AnanasStore] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-09-05T00:20:59.516+07:00  INFO 2588 --- [AnanasStore] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-09-05T00:20:59.517+07:00  INFO 2588 --- [AnanasStore] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2024-09-05T00:21:43.279+07:00  WARN 2588 --- [AnanasStore] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m3s345ms385µs200ns).
-2024-09-05T00:21:58.760+07:00  INFO 2588 --- [AnanasStore] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-09-05T00:21:58.763+07:00  INFO 2588 --- [AnanasStore] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-09-05T00:21:58.763+07:00  INFO 2588 --- [AnanasStore] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-09-05T00:22:04.400+07:00  INFO 1136 --- [AnanasStore] [main] c.e.ananasstore.AnanasStoreApplication   : Starting AnanasStoreApplication using Java 21.0.1 with PID 1136 (F:\Project2024\AnanasStore\target\classes started by LaptopCuaH in F:\Project2024\AnanasStore)
-2024-09-05T00:22:04.403+07:00  INFO 1136 --- [AnanasStore] [main] c.e.ananasstore.AnanasStoreApplication   : No active profile set, falling back to 1 default profile: "default"
-2024-09-05T00:22:05.150+07:00  INFO 1136 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-09-05T00:22:05.152+07:00  INFO 1136 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2024-09-05T00:22:05.196+07:00  INFO 1136 --- [AnanasStore] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.ananasstore.repository.AccountRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-09-05T00:22:05.196+07:00  INFO 1136 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40 ms. Found 0 JDBC repository interfaces.
-2024-09-05T00:22:05.208+07:00  INFO 1136 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-09-05T00:22:05.209+07:00  INFO 1136 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-09-05T00:22:05.241+07:00  INFO 1136 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 1 JPA repository interface.
-2024-09-05T00:22:05.540+07:00  WARN 1136 --- [AnanasStore] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
-2024-09-05T00:22:05.581+07:00  INFO 1136 --- [AnanasStore] [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
-2024-09-05T00:22:05.973+07:00  INFO 1136 --- [AnanasStore] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-09-05T00:22:05.986+07:00  INFO 1136 --- [AnanasStore] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-09-05T00:22:05.986+07:00  INFO 1136 --- [AnanasStore] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
-2024-09-05T00:22:06.045+07:00  INFO 1136 --- [AnanasStore] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-09-05T00:22:06.046+07:00  INFO 1136 --- [AnanasStore] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1584 ms
-2024-09-05T00:22:06.209+07:00  INFO 1136 --- [AnanasStore] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-09-05T00:22:06.273+07:00  INFO 1136 --- [AnanasStore] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
-2024-09-05T00:22:06.314+07:00  INFO 1136 --- [AnanasStore] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-09-05T00:22:06.697+07:00  INFO 1136 --- [AnanasStore] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-09-05T00:22:06.728+07:00  INFO 1136 --- [AnanasStore] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-09-05T00:22:06.926+07:00  INFO 1136 --- [AnanasStore] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@69499c6f
-2024-09-05T00:22:06.929+07:00  INFO 1136 --- [AnanasStore] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-09-05T00:22:07.473+07:00  WARN 1136 --- [AnanasStore] [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.example.ananasstore.entity.key.CartKey
-2024-09-05T00:22:07.474+07:00  WARN 1136 --- [AnanasStore] [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.example.ananasstore.entity.key.CartKey
-2024-09-05T00:22:07.474+07:00  WARN 1136 --- [AnanasStore] [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.example.ananasstore.entity.key.OrderDetailKey
-2024-09-05T00:22:07.474+07:00  WARN 1136 --- [AnanasStore] [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.example.ananasstore.entity.key.OrderDetailKey
-2024-09-05T00:22:08.507+07:00  INFO 1136 --- [AnanasStore] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-09-05T00:22:08.744+07:00  INFO 1136 --- [AnanasStore] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-09-05T00:22:09.745+07:00  INFO 1136 --- [AnanasStore] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-09-05T00:22:09.896+07:00  WARN 1136 --- [AnanasStore] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-09-05T00:22:10.913+07:00  INFO 1136 --- [AnanasStore] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-09-05T00:22:10.929+07:00  INFO 1136 --- [AnanasStore] [main] c.e.ananasstore.AnanasStoreApplication   : Started AnanasStoreApplication in 7.089 seconds (process running for 7.976)
-2024-09-05T00:22:16.868+07:00  INFO 1136 --- [AnanasStore] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-09-05T00:22:16.868+07:00  INFO 1136 --- [AnanasStore] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-09-05T00:22:16.870+07:00  INFO 1136 --- [AnanasStore] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2024-09-05T00:22:21.339+07:00  WARN 1136 --- [AnanasStore] [http-nio-8080-exec-2] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 42703
-2024-09-05T00:22:21.339+07:00 ERROR 1136 --- [AnanasStore] [http-nio-8080-exec-2] o.h.engine.jdbc.spi.SqlExceptionHelper   : The column name date_of_birth was not found in this ResultSet.
-2024-09-05T00:22:23.090+07:00 ERROR 1136 --- [AnanasStore] [http-nio-8080-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.InvalidDataAccessResourceUsageException: Unable to find column position by name: date_of_birth [The column name date_of_birth was not found in this ResultSet.] [n/a]; SQL [n/a]] with root cause
+2024-10-01T15:25:35.414+07:00  INFO 3652 --- [AnanasStore] [main] c.e.ananasstore.AnanasStoreApplication   : Starting AnanasStoreApplication using Java 21.0.1 with PID 3652 (F:\Project2024\AnanasStore\target\classes started by LaptopCuaH in F:\Project2024\AnanasStore)
+2024-10-01T15:25:35.426+07:00  INFO 3652 --- [AnanasStore] [main] c.e.ananasstore.AnanasStoreApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-10-01T15:25:36.341+07:00  INFO 3652 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-10-01T15:25:36.343+07:00  INFO 3652 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-10-01T15:25:36.379+07:00  INFO 3652 --- [AnanasStore] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.ananasstore.repository.AccountRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-10-01T15:25:36.379+07:00  INFO 3652 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30 ms. Found 0 JDBC repository interfaces.
+2024-10-01T15:25:36.391+07:00  INFO 3652 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-10-01T15:25:36.393+07:00  INFO 3652 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-01T15:25:36.422+07:00  INFO 3652 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25 ms. Found 1 JPA repository interface.
+2024-10-01T15:25:36.799+07:00  WARN 3652 --- [AnanasStore] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-10-01T15:25:37.066+07:00  INFO 3652 --- [AnanasStore] [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-10-01T15:25:37.527+07:00  INFO 3652 --- [AnanasStore] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-01T15:25:37.542+07:00  INFO 3652 --- [AnanasStore] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-01T15:25:37.542+07:00  INFO 3652 --- [AnanasStore] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-10-01T15:25:37.605+07:00  INFO 3652 --- [AnanasStore] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-01T15:25:37.606+07:00  INFO 3652 --- [AnanasStore] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2127 ms
+2024-10-01T15:25:37.790+07:00  INFO 3652 --- [AnanasStore] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-01T15:25:37.871+07:00  INFO 3652 --- [AnanasStore] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-01T15:25:37.918+07:00  INFO 3652 --- [AnanasStore] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-01T15:25:38.289+07:00  INFO 3652 --- [AnanasStore] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-01T15:25:38.321+07:00  INFO 3652 --- [AnanasStore] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-01T15:25:38.760+07:00  INFO 3652 --- [AnanasStore] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@15186ce0
+2024-10-01T15:25:38.762+07:00  INFO 3652 --- [AnanasStore] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-01T15:25:39.460+07:00  WARN 3652 --- [AnanasStore] [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.example.ananasstore.entity.key.CartKey
+2024-10-01T15:25:39.461+07:00  WARN 3652 --- [AnanasStore] [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.example.ananasstore.entity.key.CartKey
+2024-10-01T15:25:39.461+07:00  WARN 3652 --- [AnanasStore] [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.example.ananasstore.entity.key.OrderDetailKey
+2024-10-01T15:25:39.461+07:00  WARN 3652 --- [AnanasStore] [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.example.ananasstore.entity.key.OrderDetailKey
+2024-10-01T15:25:40.401+07:00  INFO 3652 --- [AnanasStore] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-01T15:25:40.755+07:00  INFO 3652 --- [AnanasStore] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-01T15:25:41.194+07:00  INFO 3652 --- [AnanasStore] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-01T15:25:41.269+07:00  WARN 3652 --- [AnanasStore] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-01T15:25:41.825+07:00  INFO 3652 --- [AnanasStore] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-01T15:25:41.833+07:00  INFO 3652 --- [AnanasStore] [main] c.e.ananasstore.AnanasStoreApplication   : Started AnanasStoreApplication in 7.01 seconds (process running for 9.029)
+2024-10-01T15:30:56.756+07:00  INFO 3652 --- [AnanasStore] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-01T15:30:56.757+07:00  INFO 3652 --- [AnanasStore] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-01T15:30:56.758+07:00  INFO 3652 --- [AnanasStore] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-10-01T15:31:29.676+07:00  WARN 3652 --- [AnanasStore] [http-nio-8080-exec-3] PageModule$PlainPageSerializationWarning : Serializing PageImpl instances as-is is not supported, meaning that there is no guarantee about the stability of the resulting JSON structure!
+	For a stable JSON structure, please use Spring Data's PagedModel (globally via @EnableSpringDataWebSupport(pageSerializationMode = VIA_DTO))
+	or Spring HATEOAS and Spring Data's PagedResourcesAssembler as documented in https://docs.spring.io/spring-data/commons/reference/repositories/core-extensions.html#core.web.pageables.
 
-org.postgresql.util.PSQLException: The column name date_of_birth was not found in this ResultSet.
-	at org.postgresql.jdbc.PgResultSet.findColumn(PgResultSet.java:3085) ~[postgresql-42.7.3.jar:42.7.3]
-	at com.zaxxer.hikari.pool.HikariProxyResultSet.findColumn(HikariProxyResultSet.java) ~[HikariCP-5.1.0.jar:na]
-	at org.hibernate.sql.results.jdbc.internal.AbstractResultSetAccess.resolveColumnPosition(AbstractResultSetAccess.java:65) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.query.results.ResultsHelper.lambda$resolveSqlExpression$0(ResultsHelper.java:63) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.query.results.DomainResultCreationStateImpl.resolveSqlExpression(DomainResultCreationStateImpl.java:278) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.query.results.ResultsHelper.resolveSqlExpression(ResultsHelper.java:57) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.query.results.implicit.ImplicitFetchBuilderBasic.buildFetch(ImplicitFetchBuilderBasic.java:97) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.query.results.implicit.ImplicitFetchBuilderBasic.buildFetch(ImplicitFetchBuilderBasic.java:37) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.query.results.DomainResultCreationStateImpl.lambda$createFetchableConsumer$3(DomainResultCreationStateImpl.java:539) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.metamodel.mapping.internal.ImmutableAttributeMappingList.forEach(ImmutableAttributeMappingList.java:44) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.persister.entity.AbstractEntityPersister.visitFetchables(AbstractEntityPersister.java:6166) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.query.results.DomainResultCreationStateImpl.visitFetches(DomainResultCreationStateImpl.java:454) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.sql.results.graph.AbstractFetchParent.afterInitialize(AbstractFetchParent.java:32) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.sql.results.graph.entity.AbstractEntityResultGraphNode.afterInitialize(AbstractEntityResultGraphNode.java:72) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.persister.entity.AbstractEntityPersister.createDomainResult(AbstractEntityPersister.java:1361) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.query.results.dynamic.DynamicResultBuilderEntityCalculated.buildResult(DynamicResultBuilderEntityCalculated.java:129) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.query.results.dynamic.DynamicResultBuilderEntityCalculated.buildResult(DynamicResultBuilderEntityCalculated.java:30) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.query.results.ResultSetMappingImpl.resolve(ResultSetMappingImpl.java:229) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.resolveJdbcValuesSource(JdbcSelectExecutorStandardImpl.java:327) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:115) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:83) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:76) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:65) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.query.sql.internal.NativeSelectQueryPlanImpl.performList(NativeSelectQueryPlanImpl.java:138) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.query.sql.internal.NativeQueryImpl.doList(NativeQueryImpl.java:628) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:423) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.query.spi.AbstractSelectionQuery.getSingleResult(AbstractSelectionQuery.java:555) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.springframework.data.jpa.repository.query.JpaQueryExecution$SingleEntityExecution.doExecute(JpaQueryExecution.java:223) ~[spring-data-jpa-3.3.2.jar:3.3.2]
-	at org.springframework.data.jpa.repository.query.JpaQueryExecution.execute(JpaQueryExecution.java:92) ~[spring-data-jpa-3.3.2.jar:3.3.2]
-	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.doExecute(AbstractJpaQuery.java:152) ~[spring-data-jpa-3.3.2.jar:3.3.2]
-	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.execute(AbstractJpaQuery.java:140) ~[spring-data-jpa-3.3.2.jar:3.3.2]
-	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170) ~[spring-data-commons-3.3.2.jar:3.3.2]
-	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158) ~[spring-data-commons-3.3.2.jar:3.3.2]
-	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:164) ~[spring-data-commons-3.3.2.jar:3.3.2]
-	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:143) ~[spring-data-commons-3.3.2.jar:3.3.2]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.11.jar:6.1.11]
-	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:70) ~[spring-data-commons-3.3.2.jar:3.3.2]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.11.jar:6.1.11]
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:379) ~[spring-tx-6.1.11.jar:6.1.11]
-	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.1.11.jar:6.1.11]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.11.jar:6.1.11]
-	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138) ~[spring-tx-6.1.11.jar:6.1.11]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.11.jar:6.1.11]
-	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:136) ~[spring-data-jpa-3.3.2.jar:3.3.2]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.11.jar:6.1.11]
-	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-6.1.11.jar:6.1.11]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.11.jar:6.1.11]
-	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223) ~[spring-aop-6.1.11.jar:6.1.11]
-	at jdk.proxy2/jdk.proxy2.$Proxy130.getAccountById(Unknown Source) ~[na:na]
-	at com.example.ananasstore.service.impl.AccountService.getAccountById(AccountService.java:40) ~[classes/:na]
-	at com.example.ananasstore.controller.admin.AccountController.getAccount(AccountController.java:26) ~[classes/:na]
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.11.jar:6.1.11]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.11.jar:6.1.11]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.11.jar:6.1.11]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.11.jar:6.1.11]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.11.jar:6.1.11]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.11.jar:6.1.11]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.11.jar:6.1.11]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.11.jar:6.1.11]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.11.jar:6.1.11]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.1.11.jar:6.1.11]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.11.jar:6.1.11]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.26.jar:10.1.26]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.11.jar:6.1.11]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.11.jar:6.1.11]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.11.jar:6.1.11]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
-	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
-
-2024-09-05T00:27:49.538+07:00  INFO 1136 --- [AnanasStore] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-09-05T00:27:49.538+07:00  INFO 1136 --- [AnanasStore] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-09-05T00:27:49.538+07:00  INFO 1136 --- [AnanasStore] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-09-05T00:27:54.819+07:00  INFO 14932 --- [AnanasStore] [main] c.e.ananasstore.AnanasStoreApplication   : Starting AnanasStoreApplication using Java 21.0.1 with PID 14932 (F:\Project2024\AnanasStore\target\classes started by LaptopCuaH in F:\Project2024\AnanasStore)
-2024-09-05T00:27:54.822+07:00  INFO 14932 --- [AnanasStore] [main] c.e.ananasstore.AnanasStoreApplication   : No active profile set, falling back to 1 default profile: "default"
-2024-09-05T00:27:55.573+07:00  INFO 14932 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-09-05T00:27:55.574+07:00  INFO 14932 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2024-09-05T00:27:55.619+07:00  INFO 14932 --- [AnanasStore] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.ananasstore.repository.AccountRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-09-05T00:27:55.620+07:00  INFO 14932 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41 ms. Found 0 JDBC repository interfaces.
-2024-09-05T00:27:55.631+07:00  INFO 14932 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-09-05T00:27:55.633+07:00  INFO 14932 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-09-05T00:27:55.661+07:00  INFO 14932 --- [AnanasStore] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24 ms. Found 1 JPA repository interface.
-2024-09-05T00:27:55.948+07:00  WARN 14932 --- [AnanasStore] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
-2024-09-05T00:27:55.988+07:00  INFO 14932 --- [AnanasStore] [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
-2024-09-05T00:27:56.385+07:00  INFO 14932 --- [AnanasStore] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-09-05T00:27:56.398+07:00  INFO 14932 --- [AnanasStore] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-09-05T00:27:56.398+07:00  INFO 14932 --- [AnanasStore] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
-2024-09-05T00:27:56.455+07:00  INFO 14932 --- [AnanasStore] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-09-05T00:27:56.455+07:00  INFO 14932 --- [AnanasStore] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1573 ms
-2024-09-05T00:27:56.622+07:00  INFO 14932 --- [AnanasStore] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-09-05T00:27:56.685+07:00  INFO 14932 --- [AnanasStore] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
-2024-09-05T00:27:56.726+07:00  INFO 14932 --- [AnanasStore] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-09-05T00:27:57.078+07:00  INFO 14932 --- [AnanasStore] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-09-05T00:27:57.106+07:00  INFO 14932 --- [AnanasStore] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-09-05T00:27:57.283+07:00  INFO 14932 --- [AnanasStore] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@ca2cd5e
-2024-09-05T00:27:57.285+07:00  INFO 14932 --- [AnanasStore] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-09-05T00:27:57.780+07:00  WARN 14932 --- [AnanasStore] [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.example.ananasstore.entity.key.CartKey
-2024-09-05T00:27:57.781+07:00  WARN 14932 --- [AnanasStore] [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.example.ananasstore.entity.key.CartKey
-2024-09-05T00:27:57.781+07:00  WARN 14932 --- [AnanasStore] [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.example.ananasstore.entity.key.OrderDetailKey
-2024-09-05T00:27:57.781+07:00  WARN 14932 --- [AnanasStore] [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.example.ananasstore.entity.key.OrderDetailKey
-2024-09-05T00:27:58.692+07:00  INFO 14932 --- [AnanasStore] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-09-05T00:27:58.934+07:00  INFO 14932 --- [AnanasStore] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-09-05T00:28:00.287+07:00  INFO 14932 --- [AnanasStore] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-09-05T00:28:00.503+07:00  WARN 14932 --- [AnanasStore] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-09-05T00:28:01.912+07:00  INFO 14932 --- [AnanasStore] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-09-05T00:28:01.932+07:00  INFO 14932 --- [AnanasStore] [main] c.e.ananasstore.AnanasStoreApplication   : Started AnanasStoreApplication in 7.702 seconds (process running for 8.695)
-2024-09-05T00:28:08.860+07:00  INFO 14932 --- [AnanasStore] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-09-05T00:28:08.860+07:00  INFO 14932 --- [AnanasStore] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-09-05T00:28:08.863+07:00  INFO 14932 --- [AnanasStore] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2024-09-05T00:32:35.547+07:00  INFO 14932 --- [AnanasStore] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-09-05T00:32:35.547+07:00  INFO 14932 --- [AnanasStore] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-09-05T00:32:35.547+07:00  INFO 14932 --- [AnanasStore] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-01T15:33:20.290+07:00  INFO 3652 --- [AnanasStore] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-01T15:33:20.293+07:00  INFO 3652 --- [AnanasStore] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-01T15:33:20.302+07:00  INFO 3652 --- [AnanasStore] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
