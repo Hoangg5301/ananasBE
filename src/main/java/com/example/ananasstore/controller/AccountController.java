@@ -1,6 +1,6 @@
-package com.example.ananasstore.controller.admin;
+package com.example.ananasstore.controller;
 
-import com.example.ananasstore.dto.AccountDto;
+import com.example.ananasstore.dto.responses.AccountDto;
 import com.example.ananasstore.service.impl.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController()
-@RequestMapping(value = "/admin")
+@RestController
+@RequestMapping(value = "/account")
 public class AccountController {
     @Autowired
     private AccountService accountService;

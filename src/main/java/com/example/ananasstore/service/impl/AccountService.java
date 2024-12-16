@@ -2,7 +2,7 @@ package com.example.ananasstore.service.impl;
 
 import com.example.ananasstore.common.CopyProperties;
 import com.example.ananasstore.common.functioninterface.ConverterEntityToDto;
-import com.example.ananasstore.dto.AccountDto;
+import com.example.ananasstore.dto.responses.AccountDto;
 import com.example.ananasstore.entity.AccountEntity;
 import com.example.ananasstore.repository.AccountRepository;
 import com.example.ananasstore.service.IAccountService;

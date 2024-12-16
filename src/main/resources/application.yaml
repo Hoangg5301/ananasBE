@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: AnanasStore
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/ananasstore
+    username: postgres
+    password: postgres
+    hikari:
+      poolName: Hikari
+      auto-commit: false
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          time_zone: UTC
+#        dialect: org.hibernate.dialect.Posgresql
+server:
+  port: 8080

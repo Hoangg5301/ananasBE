@@ -1,7 +1,6 @@
 package com.example.ananasstore.service;
 
-import com.example.ananasstore.dto.AccountDto;
-import com.example.ananasstore.entity.AccountEntity;
+import com.example.ananasstore.dto.responses.AccountDto;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 

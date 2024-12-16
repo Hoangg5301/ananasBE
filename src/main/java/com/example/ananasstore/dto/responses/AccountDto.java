@@ -1,4 +1,4 @@
-package com.example.ananasstore.dto;
+package com.example.ananasstore.dto.responses;
 
 import com.example.ananasstore.entity.GenderEntity;
 import com.example.ananasstore.entity.RoleEntity;
