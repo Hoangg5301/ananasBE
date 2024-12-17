@@ -1,19 +1,33 @@
 package com.example.ananasstore.controller;
 
+import com.example.ananasstore.dto.ResponseAPI;
+import com.example.ananasstore.dto.requests.accounts.CreateAccountRequest;
 import com.example.ananasstore.dto.responses.AccountDto;
-import com.example.ananasstore.service.impl.AccountService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.ananasstore.dto.responses.accounts.CreateAccountResponse;
+import com.example.ananasstore.service.AccountService;
+import com.example.ananasstore.service.impl.AccountServiceImpl;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import lombok.experimental.FieldDefaults;
 import org.springframework.data.domain.Page;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(value = "/account")
+@RequiredArgsConstructor
+@FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)
 public class AccountController {
-    @Autowired
-    private AccountService accountService;
+
+    AccountService accountService;
+
+    //create account
+    @RequestMapping(method = RequestMethod.POST, value = "/create_account")
+    public ResponseAPI<CreateAccountResponse> createAccount(@RequestBody CreateAccountRequest createAccountRequest){
+        CreateAccountResponse createAccountResponse = accountService.createAccount(createAccountRequest);
+        return new ResponseAPI<CreateAccountResponse>(HttpStatus.OK, "create account successfully!", createAccountResponse);
+    }
 
     //findAllAccount
     @RequestMapping(method = RequestMethod.GET, value = "/get_all_account")
