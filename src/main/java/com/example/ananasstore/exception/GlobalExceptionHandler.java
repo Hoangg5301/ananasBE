@@ -1,5 +1,6 @@
 package com.example.ananasstore.exception;
 
+import com.example.ananasstore.dto.ResponseAPI;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -22,9 +23,13 @@ public class GlobalExceptionHandler {
         return ResponseEntity.badRequest().body(errorMessage.toString());
     }
 
-    @ExceptionHandler(value = RuntimeException.class)
-    ResponseEntity<String> handleRuntimeException(RuntimeException exception) {
-        return ResponseEntity.badRequest().body(exception.getMessage());
+    //handle AppException
+    @ExceptionHandler(value = AppException.class)
+    ResponseAPI<String> handleException(AppException exception) {
+        return new ResponseAPI<>(
+                exception.getErrorCode().getCode(),
+                exception.getMessage()
+        );
     }
 
 }

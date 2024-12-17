@@ -7,6 +7,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
 public interface AccountRepository extends JpaRepository<AccountEntity, Integer> {
     //find all account
@@ -36,4 +38,6 @@ public interface AccountRepository extends JpaRepository<AccountEntity, Integer>
             "where a.account_id = :id", nativeQuery = true)
     AccountEntity getAccountById(int id);
 
+    //getAccount By userName
+    Optional<AccountEntity> getAccountByUserName(String userName);
 }

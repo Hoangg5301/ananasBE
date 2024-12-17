@@ -244,7 +244,7 @@ org.postgresql.util.PSQLException: The column name date_of_birth was not found i
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.11.jar:6.1.11]
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223) ~[spring-aop-6.1.11.jar:6.1.11]
 	at jdk.proxy2/jdk.proxy2.$Proxy130.getAccountById(Unknown Source) ~[na:na]
-	at com.example.ananasstore.service.impl.AccountService.getAccountById(AccountService.java:40) ~[classes/:na]
+	at com.example.ananasstore.service.impl.AccountServiceImpl.getAccountById(AccountService.java:40) ~[classes/:na]
 	at com.example.ananasstore.controller.admin.AccountController.getAccount(AccountController.java:26) ~[classes/:na]
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
