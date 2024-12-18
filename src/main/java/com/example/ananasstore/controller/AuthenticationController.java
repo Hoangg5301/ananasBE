@@ -6,6 +6,7 @@ import com.example.ananasstore.dto.responses.AuthenticationResponse;
 import com.example.ananasstore.service.AuthenticationService;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,10 +21,7 @@ public class AuthenticationController {
     @PostMapping("/login")
     public ResponseAPI<AuthenticationResponse> login(AuthenticationRequest authenticationRequest) {
         AuthenticationResponse authenticationResponse = authenticationService.authenticate(authenticationRequest);
-//        ResponseAPI<AuthenticationResponse> responseResponseAPI = ResponseAPI.<AuthenticationResponse>builder()
-//                .data(authenticationResponse)
-//                .build();
-        return null;
+        return new ResponseAPI<>(HttpStatus.OK, "Authentication Successful", authenticationResponse);
     }
 
 }

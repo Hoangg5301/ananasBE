@@ -28,8 +28,7 @@ public class GlobalExceptionHandler {
     ResponseAPI<String> handleException(AppException exception) {
         return new ResponseAPI<>(
                 exception.getErrorCode().getCode(),
-                exception.getMessage()
+                exception.getErrorCode().getMessage()
         );
     }
-
 }

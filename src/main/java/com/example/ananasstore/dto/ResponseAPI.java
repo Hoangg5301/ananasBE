@@ -7,7 +7,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 
 @Getter
-@Builder
 public class ResponseAPI <T>{
     private String responseMessage;
     private int statusCode;

@@ -6,6 +6,7 @@ import com.example.ananasstore.dto.responses.AccountDto;
 import com.example.ananasstore.dto.responses.accounts.CreateAccountResponse;
 import com.example.ananasstore.service.AccountService;
 import com.example.ananasstore.service.impl.AccountServiceImpl;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
@@ -24,7 +25,7 @@ public class AccountController {
 
     //create account
     @RequestMapping(method = RequestMethod.POST, value = "/create_account")
-    public ResponseAPI<CreateAccountResponse> createAccount(@RequestBody CreateAccountRequest createAccountRequest){
+    public ResponseAPI<CreateAccountResponse> createAccount(HttpServletRequest req, @RequestBody CreateAccountRequest createAccountRequest){
         CreateAccountResponse createAccountResponse = accountService.createAccount(createAccountRequest);
         return new ResponseAPI<CreateAccountResponse>(HttpStatus.OK, "create account successfully!", createAccountResponse);
     }
