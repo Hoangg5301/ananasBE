@@ -1,11 +1,13 @@
 package com.example.ananasstore.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import lombok.Builder;
 import lombok.Getter;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 
 @Getter
+@Builder
 public class ResponseAPI <T>{
     private String responseMessage;
     private int statusCode;

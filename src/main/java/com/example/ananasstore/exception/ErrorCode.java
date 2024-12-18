@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 
 @Getter
 public enum ErrorCode {
+    //userError
     USER_NOT_FOUND(HttpStatus.NOT_FOUND, "User not found!"),
     AUTHENTICATION_FAILED(HttpStatus.UNAUTHORIZED, "Authentication failed!"),
     ;
