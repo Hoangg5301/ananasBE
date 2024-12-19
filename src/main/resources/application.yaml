@@ -5,15 +5,15 @@ spring:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/ananasstore
-    username: postgres
-    password: postgres
+    username: hoangnv
+    password: hoang012
     hikari:
       poolName: Hikari
       auto-commit: false
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     properties:
       hibernate:
         format_sql: true
@@ -22,3 +22,11 @@ spring:
 #        dialect: org.hibernate.dialect.Posgresql
 server:
   port: 8080
+
+#API key config
+api:
+  key: "hoang012"
+
+#private key encode JWT
+jwt:
+  key: +sOcSWkNaRx73ncPMBRd6OqJ+hft7H4Vusleb1b25wjiMXFuM2rW8Ox3un1jpcaW
