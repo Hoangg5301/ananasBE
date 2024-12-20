@@ -7,8 +7,13 @@ import com.example.ananasstore.dto.requests.accounts.CreateAccountRequest;
 import com.example.ananasstore.dto.responses.AccountDto;
 import com.example.ananasstore.dto.responses.accounts.CreateAccountResponse;
 import com.example.ananasstore.entity.AccountEntity;
+import com.example.ananasstore.entity.RoleEntity;
+import com.example.ananasstore.exception.AppException;
+import com.example.ananasstore.exception.ErrorCode;
 import com.example.ananasstore.repository.AccountRepository;
+import com.example.ananasstore.repository.RoleRepository;
 import com.example.ananasstore.service.AccountService;
+import jakarta.transaction.Transactional;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -16,10 +21,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
 
 
 @Service
@@ -28,12 +31,17 @@ import org.springframework.stereotype.Service;
 public class AccountServiceImpl implements AccountService {
 
     AccountRepository accountRepository;
+    RoleRepository roleRepository;
     AccountMapper accountMapper;
+    PasswordEncoder passwordEncoder;
 
     @Override
+    @Transactional
     public CreateAccountResponse createAccount(CreateAccountRequest request) {
         AccountEntity accountEntity = accountMapper.createAccountRequestToAccountEntity(request);
-        PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(10);
+       RoleEntity role = roleRepository.findById(request.getRoleId())
+                .orElseThrow(() -> new AppException(ErrorCode.ROLE_NOT_FOUND));
+       accountEntity.setRole(role);
         accountEntity.setPassword(passwordEncoder.encode(request.getPassword()));
         accountEntity = accountRepository.save(accountEntity);
         return accountMapper.createAccountRequestToCreateAccountResponse(accountEntity);
@@ -58,7 +66,7 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public AccountDto getAccountById(int id) {
         AccountDto test = new AccountDto();
-        CopyProperties.copy(accountRepository.getAccountById(id), test);
+        CopyProperties.copy(accountRepository.findById(id), test);
         return test;
     }
 }

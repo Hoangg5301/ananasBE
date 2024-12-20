@@ -23,21 +23,6 @@ public interface AccountRepository extends JpaRepository<AccountEntity, Integer>
     @Query(value = "Select * from account", nativeQuery = true)
     Page<AccountEntity> getAllAccount(Pageable pageable);
 
-    //find account by Id
-    @Query(value = "select " +
-            "a.account_id," +
-            "a.password," +
-            "a.email," +
-            "a.user_name," +
-            "a.address," +
-            "a.phone_number," +
-            "a.date_of_birth, " +
-            "a.gender_id, " +
-            "a.role_id" +
-            " from account a " +
-            "where a.account_id = :id", nativeQuery = true)
-    AccountEntity getAccountById(int id);
-
     //getAccount By userName
     Optional<AccountEntity> getAccountByUserName(String userName);
 }

@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class AuthenticationController {
     AuthenticationService authenticationService;
 
-    @PostMapping("/ ")
+    @PostMapping("/")
     public ResponseAPI<ValidTokenResponse> verifyToken(@RequestBody ValidTokenRequest validTokenRequest) {
         return new ResponseAPI<ValidTokenResponse>(HttpStatus.OK, "verify successfully!",authenticationService.verifyToken(validTokenRequest));
     }

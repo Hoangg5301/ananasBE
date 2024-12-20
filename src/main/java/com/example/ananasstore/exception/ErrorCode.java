@@ -9,6 +9,7 @@ public enum ErrorCode {
     APIKEY_INVALID(HttpStatus.FORBIDDEN, "API key is invalid"),
     //userError
     USER_NOT_FOUND(HttpStatus.NOT_FOUND, "User not found!"),
+    ROLE_NOT_FOUND(HttpStatus.NOT_FOUND, "Role not found!"),
     AUTHENTICATION_FAILED(HttpStatus.UNAUTHORIZED, "Authentication failed!"),
     ;
 

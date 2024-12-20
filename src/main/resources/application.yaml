@@ -5,8 +5,8 @@ spring:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/ananasstore
-    username: postgres
-    password: postgres
+    username: hoangnv
+    password: hoang012
     hikari:
       poolName: Hikari
       auto-commit: false

@@ -36,23 +36,24 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     @Value("${jwt.key}")
     protected String SIGNER_KEY;
     AccountRepository accountRepository;
+    PasswordEncoder passwordEncoder;
 
     @Override
     public ValidTokenResponse verifyToken(ValidTokenRequest validTokenRequest) {
-        try {
-            JWSVerifier verifier = new MACVerifier(SIGNER_KEY.getBytes());
-            SignedJWT signedJWT = SignedJWT.parse(validTokenRequest.getToken());
-            boolean verified = signedJWT.verify(verifier);
-            Date expiryTime = signedJWT.getJWTClaimsSet().getExpirationTime();
-            return new ValidTokenResponse(verified && expiryTime.after(new Date()));
-        } catch (JOSEException | ParseException e) {
-            throw new RuntimeException(e);
-        }
+//        try {
+//            JWSVerifier verifier = new MACVerifier(SIGNER_KEY.getBytes());
+//            SignedJWT signedJWT = SignedJWT.parse(validTokenRequest.getToken());
+//            boolean verified = signedJWT.verify(verifier);
+//            Date expiryTime = signedJWT.getJWTClaimsSet().getExpirationTime();
+//            return new ValidTokenResponse(verified && expiryTime.after(new Date()));
+//        } catch (JOSEException | ParseException e) {
+//            throw new RuntimeException(e);
+//        }
+        return null;
     }
 
     @Override
     public AuthenticationResponse authenticate(AuthenticationRequest authenticationRequest) {
-        PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(10);
         var accountEntity = accountRepository.getAccountByUserName(authenticationRequest.getUserName())
                 .orElseThrow(() -> new AppException(ErrorCode.USER_NOT_FOUND));
 
@@ -74,7 +75,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
                 .issuer("annanas.vn")
                 .issueTime(new Date())
                 .expirationTime(new Date(
-                        Instant.now().plus(1, ChronoUnit.HOURS).toEpochMilli()
+                        Instant.now().plus(10, ChronoUnit.DAYS).toEpochMilli()
                 ))
                 .claim("Custom", "hoangnv")
                 .build();
