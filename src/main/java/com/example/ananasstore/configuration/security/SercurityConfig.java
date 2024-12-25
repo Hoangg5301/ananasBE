@@ -1,4 +1,4 @@
-package com.example.ananasstore.configuration;
+package com.example.ananasstore.configuration.security;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
