@@ -9,7 +9,7 @@ import lombok.Setter;
 @Embeddable
 public class OrderDetailKey {
 
-    private int orderId;
+    private Long orderId;
 
-    private int productDetailId;
+    private Long productDetailId;
 }

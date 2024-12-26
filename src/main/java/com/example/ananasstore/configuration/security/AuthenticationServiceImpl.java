@@ -1,6 +1,5 @@
-package com.example.ananasstore.service.impl;
+package com.example.ananasstore.configuration.security;
 
-import com.example.ananasstore.configuration.security.JWTUtils;
 import com.example.ananasstore.dto.requests.AuthenticationRequest;
 import com.example.ananasstore.dto.requests.ValidTokenRequest;
 import com.example.ananasstore.dto.responses.AuthenticationResponse;
@@ -9,13 +8,14 @@ import com.example.ananasstore.entity.AccountEntity;
 import com.example.ananasstore.exception.AppException;
 import com.example.ananasstore.exception.ErrorCode;
 import com.example.ananasstore.repository.AccountRepository;
-import com.example.ananasstore.service.AuthenticationService;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
-import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.Set;
 
 @Service
 @RequiredArgsConstructor
@@ -25,21 +25,26 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     PasswordEncoder passwordEncoder;
     JWTUtils jwtUtils;
 
-    public UserDetails userDetail(String userName){
+    public DomainUserDetail domainUserDetail(String userName) {
         AccountEntity accountEntity = accountRepository.getAccountByUserName(userName)
-                .orElseThrow(() ->new AppException(ErrorCode.USER_NOT_FOUND));
-        return null;
+                .orElseThrow(() -> new AppException(ErrorCode.USER_NOT_FOUND));
+        return new DomainUserDetail(
+                accountEntity.getAccountId(),
+                accountEntity.getUserName(),
+                accountEntity.getPassword(),
+                Set.of(new SimpleGrantedAuthority(accountEntity.getRole().getRoleName()))
+        );
     }
+
     @Override
     public AuthenticationResponse authenticate(AuthenticationRequest authenticationRequest) {
-        var accountEntity = accountRepository.getAccountByUserName(authenticationRequest.getUserName())
-                .orElseThrow(() -> new AppException(ErrorCode.USER_NOT_FOUND));
 
-        if (!passwordEncoder.matches(authenticationRequest.getPassword(), accountEntity.getPassword())) {
+        DomainUserDetail domainUserDetail = domainUserDetail(authenticationRequest.getUserName());
+        if (!passwordEncoder.matches(authenticationRequest.getPassword(), domainUserDetail.getPassword())) {
             throw new AppException(ErrorCode.AUTHENTICATION_FAILED);
         }
 
-        String token = jwtUtils.generateToken(userDetail);
+        String token = jwtUtils.generateToken(domainUserDetail);
         return AuthenticationResponse.builder()
                 .token(token)
                 .authenticated(true)

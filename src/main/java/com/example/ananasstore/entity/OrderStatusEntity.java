@@ -18,7 +18,7 @@ public class OrderStatusEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "order_status_id")
-    private int orderStatusId;
+    private Long orderStatusId;
 
     @Column(name = "status_name")
     private String statusName;

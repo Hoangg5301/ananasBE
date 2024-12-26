@@ -1,4 +1,4 @@
-package com.example.ananasstore.service;
+package com.example.ananasstore.configuration.security;
 
 import com.example.ananasstore.dto.requests.AuthenticationRequest;
 import com.example.ananasstore.dto.responses.AuthenticationResponse;

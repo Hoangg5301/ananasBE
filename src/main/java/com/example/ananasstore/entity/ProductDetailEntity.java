@@ -14,7 +14,7 @@ import java.util.Set;
 public class ProductDetailEntity {
     @Id
     @Column(name = "product_detail_id")
-    private int productDetailId;
+    private Long productDetailId;
 
     @Column(name = "size")
     private String size;

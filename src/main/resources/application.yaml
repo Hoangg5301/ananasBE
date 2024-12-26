@@ -30,3 +30,8 @@ api:
 #private key encode JWT
 jwt:
   key: +sOcSWkNaRx73ncPMBRd6OqJ+hft7H4Vusleb1b25wjiMXFuM2rW8Ox3un1jpcaW
+
+logging:
+  file:
+    path: \
+    name: AnnanasLog.txt

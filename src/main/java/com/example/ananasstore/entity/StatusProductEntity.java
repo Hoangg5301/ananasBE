@@ -15,7 +15,7 @@ public class StatusProductEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "status_product_id")
-    private int statusProductId;
+    private Long statusProductId;
 
     @Column(name = "status_product_name")
     private String statusProductName;

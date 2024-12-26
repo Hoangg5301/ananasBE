@@ -9,6 +9,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
 import io.jsonwebtoken.Jwts;
+
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 import java.nio.charset.StandardCharsets;
@@ -23,21 +24,24 @@ public class JWTUtils {
     @Value("${jwt.key}")
     protected String SIGNER_KEY;
     byte[] keyByte;
-    private static final String ALGORITHM = "HmacSHA512";
+    private static final String ALGORITHM = "HmacSHA256";
     private static final long EXPIRATION_TIME = 86400000L; //24 hours
+    private SecretKey key;
 
     @PostConstruct
     protected void init() {
         this.keyByte = Base64.getDecoder().decode(SIGNER_KEY.getBytes(StandardCharsets.UTF_8));
+        key = new SecretKeySpec(keyByte, ALGORITHM);
     }
-    public String generateToken(UserDetails userDetails) {
+
+    public String generateToken(DomainUserDetail domainUserDetail) {
 
         return Jwts.builder()
-                .setSubject(userDetails.getUsername())
-                .setIssuer("ananasstore.vn")
-                .setIssuedAt(new Date())
-                .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
-                .signWith(SignatureAlgorithm.HS512, keyByte)
+                .subject(domainUserDetail.getUsername())
+                .issuer("ananasstore.vn")
+                .issuedAt(new Date())
+                .expiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
+                .signWith(key)
                 .compact();
 
         //Devteria
@@ -62,19 +66,52 @@ public class JWTUtils {
 //            throw new RuntimeException("Cannot create JWT object", exception);
 //        }
     }
-    public String generateRefreshToken(HashMap<String, Object> claims, UserDetails userDetails) {
+
+    public String generateRefreshToken(HashMap<String, Object> claims, DomainUserDetail domainUserDetail) {
 
         return Jwts.builder()
-                .setClaims(claims)
-                .setSubject(userDetails.getUsername())
-                .setIssuer("ananasstore.vn")
-                .setIssuedAt(new Date())
-                .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
-                .signWith(SignatureAlgorithm.HS512, keyByte)
+                .claims(claims)
+                .subject(domainUserDetail.getUsername())
+                .issuer("ananasstore.vn")
+                .issuedAt(new Date())
+                .expiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
+                .signWith(key)
                 .compact();
     }
 
-    private <T> T extractClaim(String token, Function<Claims, T> claimsResolver) {
-        return claimsResolver.apply(Jwts.parser().veryi)
+    //verify token
+    public Boolean validateToken(String token, UserDetails userDetails) {
+        final String userName = extractUserName(token);
+        return userName.equals(userDetails.getUsername());
+    }
+
+    //get Username from token
+    private String extractUserName(String token) {
+        return extractClaim(token, new Function<Claims, String>() {
+            @Override
+            public String apply(Claims claims) {
+                return claims.getSubject();
+            }
+        });
+    }
+
+    //Check time token
+    private boolean isTokenExpired(String token) {
+        return extractClaim(token, new Function<Claims, Boolean>() {
+            @Override
+            public Boolean apply(Claims claims) {
+                return claims.getExpiration().before(new Date());
+            }
+        });
+    }
+
+    private <R> R extractClaim(String token, Function<Claims, R> claimsResolver) {
+        Claims claims = Jwts
+                .parser()
+                .verifyWith(key)
+                .build()
+                .parseClaimsJws(token)
+                .getBody();
+        return claimsResolver.apply(claims);
     }
 }

@@ -9,7 +9,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class CartKey {
-    private int accountId;
+    private Long accountId;
 
-    private int productDetailId;
+    private Long productDetailId;
 }

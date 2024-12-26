@@ -4,13 +4,8 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 
 import java.time.LocalDateTime;
-import java.util.Collection;
-import java.util.List;
 import java.util.Set;
 
 
@@ -18,12 +13,12 @@ import java.util.Set;
 @Setter
 @Entity
 @Table(name = "account")
-public class AccountEntity implements UserDetails {
+public class AccountEntity {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "account_id")
-    private int accountId;
+    private Long accountId;
 
     @Column(name = "user_name")
     private String userName;
@@ -68,13 +63,4 @@ public class AccountEntity implements UserDetails {
             inverseJoinColumns = @JoinColumn(name = "product_id"))
     private Set<ProductEntity> products;
 
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(new SimpleGrantedAuthority(role.getRoleName()));
-    }
-
-    @Override
-    public String getUsername() {
-        return userName;
-    }
 }
