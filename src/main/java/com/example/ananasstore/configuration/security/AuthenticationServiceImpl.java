@@ -5,6 +5,7 @@ import com.example.ananasstore.dto.requests.AuthenticationRequest;
 import com.example.ananasstore.dto.requests.ValidTokenRequest;
 import com.example.ananasstore.dto.responses.AuthenticationResponse;
 import com.example.ananasstore.dto.responses.ValidTokenResponse;
+import com.example.ananasstore.entity.AccountEntity;
 import com.example.ananasstore.exception.AppException;
 import com.example.ananasstore.exception.ErrorCode;
 import com.example.ananasstore.repository.AccountRepository;
@@ -24,20 +25,11 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     PasswordEncoder passwordEncoder;
     JWTUtils jwtUtils;
 
-    @Override
-    public ValidTokenResponse verifyToken(ValidTokenRequest validTokenRequest) {
-//        try {
-//            JWSVerifier verifier = new MACVerifier(SIGNER_KEY.getBytes());
-//            SignedJWT signedJWT = SignedJWT.parse(validTokenRequest.getToken());
-//            boolean verified = signedJWT.verify(verifier);
-//            Date expiryTime = signedJWT.getJWTClaimsSet().getExpirationTime();
-//            return new ValidTokenResponse(verified && expiryTime.after(new Date()));
-//        } catch (JOSEException | ParseException e) {
-//            throw new RuntimeException(e);
-//        }
+    public UserDetails userDetail(String userName){
+        AccountEntity accountEntity = accountRepository.getAccountByUserName(userName)
+                .orElseThrow(() ->new AppException(ErrorCode.USER_NOT_FOUND));
         return null;
     }
-
     @Override
     public AuthenticationResponse authenticate(AuthenticationRequest authenticationRequest) {
         var accountEntity = accountRepository.getAccountByUserName(authenticationRequest.getUserName())
@@ -52,5 +44,18 @@ public class AuthenticationServiceImpl implements AuthenticationService {
                 .token(token)
                 .authenticated(true)
                 .build();
+    }
+
+    public ValidTokenResponse verifyToken(ValidTokenRequest validTokenRequest) {
+//        try {
+//            JWSVerifier verifier = new MACVerifier(SIGNER_KEY.getBytes());
+//            SignedJWT signedJWT = SignedJWT.parse(validTokenRequest.getToken());
+//            boolean verified = signedJWT.verify(verifier);
+//            Date expiryTime = signedJWT.getJWTClaimsSet().getExpirationTime();
+//            return new ValidTokenResponse(verified && expiryTime.after(new Date()));
+//        } catch (JOSEException | ParseException e) {
+//            throw new RuntimeException(e);
+//        }
+        return null;
     }
 }
