@@ -1,11 +1,10 @@
 package com.example.ananasstore.configuration.security;
 
+import com.example.ananasstore.dto.requests.ValidTokenRequest;
 import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.SignatureAlgorithm;
 import jakarta.annotation.PostConstruct;
 import lombok.experimental.NonFinal;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
 import io.jsonwebtoken.Jwts;
@@ -32,6 +31,7 @@ public class JWTUtils {
     protected void init() {
         this.keyByte = Base64.getDecoder().decode(SIGNER_KEY.getBytes(StandardCharsets.UTF_8));
         key = new SecretKeySpec(keyByte, ALGORITHM);
+        System.out.println("Signing Key Length: " + SIGNER_KEY.getBytes().length);
     }
 
     public String generateToken(DomainUserDetail domainUserDetail) {
@@ -43,28 +43,6 @@ public class JWTUtils {
                 .expiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
                 .signWith(key)
                 .compact();
-
-        //Devteria
-//        JWSHeader header = new JWSHeader(JWSAlgorithm.HS512);
-//        JWTClaimsSet jwtClaimsSet = new JWTClaimsSet.Builder()
-//                .subject(userName)
-//                .issuer("annanas.vn")
-//                .issueTime(new Date())
-//                .expirationTime(new Date(
-//                        Instant.now().plus(EXPIRATION_TIME, ChronoUnit.SECONDS).toEpochMilli()
-//                ))
-//                .claim("Custom", "hoangnv")
-//                .build();
-//
-//        //create payload
-//        Payload payload = new Payload(jwtClaimsSet.toJSONObject());
-//        JWSObject jwsObject = new JWSObject(header, payload);
-//        try {
-//            jwsObject.sign(new MACSigner(SIGNER_KEY.getBytes()));
-//            return jwsObject.serialize();
-//        } catch (JOSEException exception) {
-//            throw new RuntimeException("Cannot create JWT object", exception);
-//        }
     }
 
     public String generateRefreshToken(HashMap<String, Object> claims, DomainUserDetail domainUserDetail) {
@@ -80,9 +58,11 @@ public class JWTUtils {
     }
 
     //verify token
-    public Boolean validateToken(String token, UserDetails userDetails) {
-        final String userName = extractUserName(token);
-        return userName.equals(userDetails.getUsername());
+    public Boolean validateToken(ValidTokenRequest validTokenRequest) {
+        Jwts.parser()
+                .verifyWith(key)
+
+        return true;
     }
 
     //get Username from token

@@ -1,9 +1,7 @@
 package com.example.ananasstore.configuration.security;
 
 import com.example.ananasstore.dto.requests.AuthenticationRequest;
-import com.example.ananasstore.dto.requests.ValidTokenRequest;
 import com.example.ananasstore.dto.responses.AuthenticationResponse;
-import com.example.ananasstore.dto.responses.ValidTokenResponse;
 import com.example.ananasstore.entity.AccountEntity;
 import com.example.ananasstore.exception.AppException;
 import com.example.ananasstore.exception.ErrorCode;
@@ -49,18 +47,5 @@ public class AuthenticationServiceImpl implements AuthenticationService {
                 .token(token)
                 .authenticated(true)
                 .build();
-    }
-
-    public ValidTokenResponse verifyToken(ValidTokenRequest validTokenRequest) {
-//        try {
-//            JWSVerifier verifier = new MACVerifier(SIGNER_KEY.getBytes());
-//            SignedJWT signedJWT = SignedJWT.parse(validTokenRequest.getToken());
-//            boolean verified = signedJWT.verify(verifier);
-//            Date expiryTime = signedJWT.getJWTClaimsSet().getExpirationTime();
-//            return new ValidTokenResponse(verified && expiryTime.after(new Date()));
-//        } catch (JOSEException | ParseException e) {
-//            throw new RuntimeException(e);
-//        }
-        return null;
     }
 }

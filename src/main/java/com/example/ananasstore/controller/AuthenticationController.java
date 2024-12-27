@@ -1,7 +1,9 @@
 package com.example.ananasstore.controller;
 
+import com.example.ananasstore.configuration.security.JWTUtils;
 import com.example.ananasstore.dto.ResponseAPI;
 import com.example.ananasstore.dto.requests.AuthenticationRequest;
+import com.example.ananasstore.dto.requests.ValidTokenRequest;
 import com.example.ananasstore.dto.responses.AuthenticationResponse;
 import com.example.ananasstore.configuration.security.AuthenticationService;
 import lombok.*;
@@ -18,11 +20,11 @@ import org.springframework.web.bind.annotation.RestController;
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class AuthenticationController {
     AuthenticationService authenticationService;
-
-//    @PostMapping("/")
-//    public ResponseAPI<ValidTokenResponse> verifyToken(@RequestBody ValidTokenRequest validTokenRequest) {
-//        return new ResponseAPI<ValidTokenResponse>(HttpStatus.OK, "verify successfully!",authenticationService.verifyToken(validTokenRequest));
-//    }
+    JWTUtils jwtUtils;
+    @PostMapping("/verifyToken")
+    public ResponseAPI<Boolean> verifyToken(@RequestBody ValidTokenRequest validTokenRequest) {
+        return new ResponseAPI<Boolean>(HttpStatus.OK, "verify successfully!",jwtUtils.validateToken(validTokenRequest));
+    }
     @PostMapping("/login")
     public ResponseAPI<AuthenticationResponse> login(@RequestBody AuthenticationRequest authenticationRequest) {
         AuthenticationResponse authenticationResponse = authenticationService.authenticate(authenticationRequest);
