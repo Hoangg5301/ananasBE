@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 
 @Data
 public class AccountDto {
-    private int accountId;
+    private Long accountId;
     private String userName;
     private String password;
     private String email;

@@ -1,20 +1,21 @@
 package com.example.ananasstore.configuration.security;
 
+import ch.qos.logback.core.util.StringUtil;
 import com.example.ananasstore.dto.requests.ValidTokenRequest;
-import io.jsonwebtoken.Claims;
+import com.example.ananasstore.exception.AppException;
+import com.example.ananasstore.exception.ErrorCode;
+import io.jsonwebtoken.*;
 import jakarta.annotation.PostConstruct;
 import lombok.experimental.NonFinal;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Component;
-
-import io.jsonwebtoken.Jwts;
+import org.springframework.util.CollectionUtils;
 
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 import java.nio.charset.StandardCharsets;
-import java.util.Base64;
-import java.util.Date;
-import java.util.HashMap;
+import java.util.*;
 import java.util.function.Function;
 
 @Component
@@ -37,18 +38,7 @@ public class JWTUtils {
     public String generateToken(DomainUserDetail domainUserDetail) {
 
         return Jwts.builder()
-                .subject(domainUserDetail.getUsername())
-                .issuer("ananasstore.vn")
-                .issuedAt(new Date())
-                .expiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
-                .signWith(key)
-                .compact();
-    }
-
-    public String generateRefreshToken(HashMap<String, Object> claims, DomainUserDetail domainUserDetail) {
-
-        return Jwts.builder()
-                .claims(claims)
+                .claim("String", buildScope(domainUserDetail))
                 .subject(domainUserDetail.getUsername())
                 .issuer("ananasstore.vn")
                 .issuedAt(new Date())
@@ -59,10 +49,18 @@ public class JWTUtils {
 
     //verify token
     public Boolean validateToken(ValidTokenRequest validTokenRequest) {
-        Jwts.parser()
-                .verifyWith(key)
-
-        return true;
+        try{
+            Jwts.parser().verifyWith(key).build().parseSignedClaims(validTokenRequest.getToken());
+        } catch(SecurityException | MalformedJwtException e) {
+            throw new AppException(ErrorCode.JWT_INCORRECT);
+        } catch (ExpiredJwtException e) {
+            throw new AppException(ErrorCode.JWT_EXPIRED);
+        } catch (UnsupportedJwtException e) {
+            throw new AppException(ErrorCode.UNSUPPORTED_JWT_TOKEN);
+        } catch (IllegalArgumentException e) {
+            throw new AppException(ErrorCode.JWT_INVALID);
+        }
+            return true;
     }
 
     //get Username from token
@@ -93,5 +91,15 @@ public class JWTUtils {
                 .parseClaimsJws(token)
                 .getBody();
         return claimsResolver.apply(claims);
+    }
+
+    private String buildScope(DomainUserDetail domainUserDetail) {
+        StringJoiner scope = new StringJoiner(" ");
+        if(!CollectionUtils.isEmpty(domainUserDetail.getAuthorities())) {
+            for (GrantedAuthority authority : domainUserDetail.getAuthorities()) {
+                scope.add(authority.getAuthority());
+            }
+        }
+        return scope.toString();
     }
 }

@@ -16,6 +16,6 @@ public interface AccountService {
     Page<AccountDto> getAllAccount(int pageNumber, int pageSize, boolean sortType, String sortField);
 
     //find account
-    AccountDto getAccountById(int id);
+    AccountDto getAccountById(Long id);
 
 }

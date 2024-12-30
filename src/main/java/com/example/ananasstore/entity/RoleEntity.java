@@ -11,7 +11,7 @@ import java.util.Set;
 @Setter
 @Entity
 @Table(name = "role")
-public class RoleEntity {
+public class RoleEntity extends BaseEntity {
     @Id
     @Column(name = "role_id")
     private Long roleId;

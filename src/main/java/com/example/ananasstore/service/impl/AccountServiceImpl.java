@@ -64,7 +64,7 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public AccountDto getAccountById(int id) {
+    public AccountDto getAccountById(Long id) {
         AccountDto test = new AccountDto();
         CopyProperties.copy(accountRepository.findById(id), test);
         return test;

@@ -18,5 +18,5 @@ public class CreateAccountRequest {
     private String address;
     private String phoneNumber;
     private LocalDate dateOfBirth;
-    private int roleId;
+    private Long roleId;
 }

@@ -11,7 +11,7 @@ import java.util.Set;
 @Setter
 @Entity
 @Table(name = "product_detail")
-public class ProductDetailEntity {
+public class ProductDetailEntity extends BaseEntity {
     @Id
     @Column(name = "product_detail_id")
     private Long productDetailId;

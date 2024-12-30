@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface AccountRepository extends JpaRepository<AccountEntity, Integer> {
+public interface AccountRepository extends JpaRepository<AccountEntity, Long> {
     //find all account
 //    @Query(value = "SELECT a.*, g.gender_name, r.role_name " +
 //            "FROM account a" +

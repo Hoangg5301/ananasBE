@@ -23,17 +23,6 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     PasswordEncoder passwordEncoder;
     JWTUtils jwtUtils;
 
-    public DomainUserDetail domainUserDetail(String userName) {
-        AccountEntity accountEntity = accountRepository.getAccountByUserName(userName)
-                .orElseThrow(() -> new AppException(ErrorCode.USER_NOT_FOUND));
-        return new DomainUserDetail(
-                accountEntity.getAccountId(),
-                accountEntity.getUserName(),
-                accountEntity.getPassword(),
-                Set.of(new SimpleGrantedAuthority(accountEntity.getRole().getRoleName()))
-        );
-    }
-
     @Override
     public AuthenticationResponse authenticate(AuthenticationRequest authenticationRequest) {
 
@@ -47,5 +36,16 @@ public class AuthenticationServiceImpl implements AuthenticationService {
                 .token(token)
                 .authenticated(true)
                 .build();
+    }
+
+    private DomainUserDetail domainUserDetail(String userName) {
+        AccountEntity accountEntity = accountRepository.getAccountByUserName(userName)
+                .orElseThrow(() -> new AppException(ErrorCode.USER_NOT_FOUND));
+        return new DomainUserDetail(
+                accountEntity.getAccountId(),
+                accountEntity.getUserName(),
+                accountEntity.getPassword(),
+                Set.of(new SimpleGrantedAuthority(accountEntity.getRole().getRoleName()))
+        );
     }
 }

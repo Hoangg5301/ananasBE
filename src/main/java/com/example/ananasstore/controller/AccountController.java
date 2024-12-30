@@ -36,8 +36,8 @@ public class AccountController {
         return accountService.getAllAccount(0, 10, true, "account_id");
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/get_account")
-    public AccountDto getAccount(@RequestParam int account_id){
+    @RequestMapping(method = RequestMethod.GET, value = "/get_account/{account_id}")
+    public AccountDto getAccount(@PathVariable Long account_id){
         return  accountService.getAccountById(account_id);
     }
 }
